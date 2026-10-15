@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+data/
+*.db
+*.db-shm
+*.db-wal
+chat_logs/
+# Keep tracked historical artifacts under logs/ if desired; ignore generated files by policy.
+logs/*.tmp
+.streamlit/secrets.toml

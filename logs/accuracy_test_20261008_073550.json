@@ -1,0 +1,104 @@
+[
+  {
+    "question_number": 1,
+    "question": "What was Hemlata's role at VerbX?",
+    "expected_relevant_chunk_ids": [
+      "PBI_midterm_report.pdf::p4::c1"
+    ],
+    "selected_chunk_ids": [
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p5::c1",
+      "PBI_midterm_report.pdf::p8::c1",
+      "PBI_midterm_report.pdf::p2::c1",
+      "PBI_midterm_report.pdf::p12::c1",
+      "PBI_midterm_report.pdf::p4::c2"
+    ],
+    "selected_pages": [
+      2,
+      4,
+      5,
+      8,
+      12
+    ],
+    "answer": "I could not find this information in the provided document."
+  },
+  {
+    "question_number": 2,
+    "question": "What was the main focus of Hemlata's internship at VerbX?",
+    "expected_relevant_chunk_ids": [
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p4::c2"
+    ],
+    "selected_chunk_ids": [
+      "PBI_midterm_report.pdf::p8::c1",
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p5::c1",
+      "PBI_midterm_report.pdf::p6::c1",
+      "PBI_midterm_report.pdf::p12::c1",
+      "PBI_midterm_report.pdf::p2::c1"
+    ],
+    "selected_pages": [
+      2,
+      4,
+      5,
+      6,
+      8,
+      12
+    ],
+    "answer": "I could not find this information in the provided document. The document describes an internship at VerbX in the role of Product and Revenue Intelligence Support, but does not mention the intern's name (Hemlata) anywhere in the supplied text."
+  },
+  {
+    "question_number": 3,
+    "question": "What types of internal materials did Hemlata review at the beginning of the internship?",
+    "expected_relevant_chunk_ids": [
+      "PBI_midterm_report.pdf::p4::c1"
+    ],
+    "error": "Final prompt exceeds configured input budget."
+  },
+  {
+    "question_number": 4,
+    "question": "What kind of communication platform is VerbX developing?",
+    "expected_relevant_chunk_ids": [
+      "PBI_midterm_report.pdf::p5::c1"
+    ],
+    "selected_chunk_ids": [
+      "PBI_midterm_report.pdf::p5::c1",
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p8::c1",
+      "PBI_midterm_report.pdf::p2::c1",
+      "PBI_midterm_report.pdf::p5::c2",
+      "PBI_midterm_report.pdf::p11::c1"
+    ],
+    "selected_pages": [
+      2,
+      4,
+      5,
+      8,
+      11
+    ],
+    "answer": "VerbX is developing a multilingual communication platform intended for use across sectors such as banking, travel, healthcare, and enterprise environments. The platform focuses on enabling communication between people who speak different languages by providing structured communication tools. [Page 5]"
+  },
+  {
+    "question_number": 5,
+    "question": "Which sectors is the VerbX platform intended to serve?",
+    "expected_relevant_chunk_ids": [
+      "PBI_midterm_report.pdf::p5::c1"
+    ],
+    "selected_chunk_ids": [
+      "PBI_midterm_report.pdf::p5::c1",
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p2::c1",
+      "PBI_midterm_report.pdf::p8::c1",
+      "PBI_midterm_report.pdf::p11::c1",
+      "PBI_midterm_report.pdf::p4::c2"
+    ],
+    "selected_pages": [
+      2,
+      4,
+      5,
+      8,
+      11
+    ],
+    "answer": "The VerbX platform is intended to serve the sectors of banking, travel, healthcare, and enterprise environments [Page 5]."
+  }
+]

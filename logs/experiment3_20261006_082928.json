@@ -1,0 +1,1420 @@
+{
+  "experiment": "Experiment 3",
+  "retrieval_k": 10,
+  "final_k": 4,
+  "precision_at_4": 0.25,
+  "recall_at_4": 0.84375,
+  "mrr": 0.75,
+  "question_results": [
+    {
+      "question_number": 1,
+      "question": "Where did Hemlata complete her B.Tech?",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.3530353307723999,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.19335708022117615,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.15390335023403168,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.10301340371370316,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.09342728555202484,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": -0.02562660165131092,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "faiss_similarity": 0.3530353307723999,
+          "rerank_score": -1.222435474395752,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "faiss_similarity": 0.19335708022117615,
+          "rerank_score": -11.171234130859375,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "faiss_similarity": -0.02562660165131092,
+          "rerank_score": -11.403186798095703,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "faiss_similarity": 0.15390335023403168,
+          "rerank_score": -11.417673110961914,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 2,
+      "question": "What programming and data processing languages does Hemlata know?",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.5462903380393982,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.36900538206100464,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.24386033415794373,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": 0.21233999729156494,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.18624131381511688,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.08366519957780838,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "faiss_similarity": 0.5462903380393982,
+          "rerank_score": 4.9489898681640625,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "faiss_similarity": 0.21233999729156494,
+          "rerank_score": -9.333404541015625,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "faiss_similarity": 0.36900538206100464,
+          "rerank_score": -9.922087669372559,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "faiss_similarity": 0.24386033415794373,
+          "rerank_score": -10.847261428833008,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 3,
+      "question": "What cloud technologies does Hemlata know?",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.5450779795646667,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.3475654125213623,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.2558034658432007,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.21733233332633972,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": 0.19753456115722656,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.1940784603357315,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "faiss_similarity": 0.5450779795646667,
+          "rerank_score": 3.028531074523926,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "faiss_similarity": 0.3475654125213623,
+          "rerank_score": -10.662845611572266,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "faiss_similarity": 0.19753456115722656,
+          "rerank_score": -11.356765747070312,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "faiss_similarity": 0.21733233332633972,
+          "rerank_score": -11.384807586669922,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 4,
+      "question": "What does Hemlata do at Care.fi?",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c2",
+        "Hemlata_Resume_Data.pdf::p1::c3"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.3179432451725006,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.13828551769256592,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.1006898581981659,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.09377914667129517,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.05614425987005234,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": 0.03891071304678917,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "faiss_similarity": 0.3179432451725006,
+          "rerank_score": -4.271848678588867,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "faiss_similarity": 0.13828551769256592,
+          "rerank_score": -11.309379577636719,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "faiss_similarity": 0.03891071304678917,
+          "rerank_score": -11.460342407226562,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "faiss_similarity": 0.05614425987005234,
+          "rerank_score": -11.492644309997559,
+          "page": 1,
+          "relevant": true
+        }
+      ],
+      "precision_at_4": 0.5,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 0.5
+    },
+    {
+      "question_number": 5,
+      "question": "What technologies are used in Hemlata's Care.fi ETL pipelines?",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c2"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.44443997740745544,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.3935381770133972,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.2544146478176117,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.1582951694726944,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": 0.15645602345466614,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.1269170045852661,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "faiss_similarity": 0.44443997740745544,
+          "rerank_score": 2.296165943145752,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "faiss_similarity": 0.3935381770133972,
+          "rerank_score": -0.5643406510353088,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "faiss_similarity": 0.2544146478176117,
+          "rerank_score": -10.893125534057617,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "faiss_similarity": 0.15645602345466614,
+          "rerank_score": -11.40239143371582,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 0.5
+    },
+    {
+      "question_number": 6,
+      "question": "What was Hemlata's role at IVISH AI Quantum?",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c3"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.268167108297348,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.18317961692810059,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.12719354033470154,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.09065130352973938,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": -0.014284849166870117,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": -0.10671135783195496,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "faiss_similarity": 0.18317961692810059,
+          "rerank_score": -0.30433571338653564,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "faiss_similarity": 0.268167108297348,
+          "rerank_score": -5.9620208740234375,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "faiss_similarity": 0.12719354033470154,
+          "rerank_score": -10.990947723388672,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "faiss_similarity": 0.09065130352973938,
+          "rerank_score": -11.392580032348633,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 7,
+      "question": "How many records did Hemlata clean and validate at IVISH AI?",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c3"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.31029248237609863,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.2813720703125,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.19249661266803741,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.17735645174980164,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.060604773461818695,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": 0.008324805647134781,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "faiss_similarity": 0.2813720703125,
+          "rerank_score": 2.97489595413208,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "faiss_similarity": 0.31029248237609863,
+          "rerank_score": -7.511693000793457,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "faiss_similarity": 0.008324805647134781,
+          "rerank_score": -9.298971176147461,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "faiss_similarity": 0.060604773461818695,
+          "rerank_score": -10.658252716064453,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 8,
+      "question": "How many KPI dashboards did Hemlata build?",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c3"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.3610718846321106,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.2899182438850403,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.20062801241874695,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.19300927221775055,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.1916930377483368,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": 0.10715436935424805,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "faiss_similarity": 0.2899182438850403,
+          "rerank_score": -2.32450532913208,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "faiss_similarity": 0.3610718846321106,
+          "rerank_score": -4.493670463562012,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "faiss_similarity": 0.1916930377483368,
+          "rerank_score": -4.66898775100708,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "faiss_similarity": 0.19300927221775055,
+          "rerank_score": -9.768611907958984,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 9,
+      "question": "How many app records were processed in the Play Store App Analytics project?",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c4"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": 0.4867600202560425,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.3263416886329651,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.27512478828430176,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.20762789249420166,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.2036912441253662,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.1440889686346054,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "faiss_similarity": 0.4867600202560425,
+          "rerank_score": 7.882777214050293,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "faiss_similarity": 0.3263416886329651,
+          "rerank_score": -3.8793251514434814,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "faiss_similarity": 0.27512478828430176,
+          "rerank_score": -9.200372695922852,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "faiss_similarity": 0.2036912441253662,
+          "rerank_score": -11.220877647399902,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 10,
+      "question": "What did Hemlata analyze in the Play Store App Analytics project?",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c4"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.38819247484207153,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": 0.3815692067146301,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.3551831841468811,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.34095585346221924,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.28046905994415283,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.24403110146522522,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "faiss_similarity": 0.3815692067146301,
+          "rerank_score": 2.3224055767059326,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "faiss_similarity": 0.34095585346221924,
+          "rerank_score": -6.322669506072998,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "faiss_similarity": 0.38819247484207153,
+          "rerank_score": -7.197680950164795,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "faiss_similarity": 0.3551831841468811,
+          "rerank_score": -9.660747528076172,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 11,
+      "question": "What was the performance of the LightGBM model in the Smart Logistics project?",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c5"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.4570733904838562,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": 0.3857802152633667,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.305980920791626,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.28846079111099243,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.2761378884315491,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.23728987574577332,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "faiss_similarity": 0.3857802152633667,
+          "rerank_score": 0.612282395362854,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "faiss_similarity": 0.4570733904838562,
+          "rerank_score": -1.8110263347625732,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "faiss_similarity": 0.28846079111099243,
+          "rerank_score": -6.207758903503418,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "faiss_similarity": 0.2761378884315491,
+          "rerank_score": -11.32581615447998,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 0.5
+    },
+    {
+      "question_number": 12,
+      "question": "What features were used in the Smart Logistics Delivery Prediction System?",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c4",
+        "Hemlata_Resume_Data.pdf::p1::c5"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": 0.5592665672302246,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.3244709372520447,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.2992579936981201,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.2965730130672455,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.2797962427139282,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.16636769473552704,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "faiss_similarity": 0.5592665672302246,
+          "rerank_score": 5.157496452331543,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "faiss_similarity": 0.2992579936981201,
+          "rerank_score": -10.547286987304688,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "faiss_similarity": 0.2965730130672455,
+          "rerank_score": -10.606208801269531,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "faiss_similarity": 0.2797962427139282,
+          "rerank_score": -10.683382987976074,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.5,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 13,
+      "question": "How many customer records were analyzed in the Bank Customer Churn project?",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c5"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.5680002570152283,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": 0.3718477487564087,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.33529990911483765,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.3302064538002014,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.275701105594635,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.2721008360385895,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "faiss_similarity": 0.5680002570152283,
+          "rerank_score": 8.174491882324219,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "faiss_similarity": 0.3718477487564087,
+          "rerank_score": -9.070534706115723,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "faiss_similarity": 0.3302064538002014,
+          "rerank_score": -9.160767555236816,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "faiss_similarity": 0.33529990911483765,
+          "rerank_score": -10.785774230957031,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 14,
+      "question": "Summarize Hemlata's professional experience.",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c2",
+        "Hemlata_Resume_Data.pdf::p1::c3"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.325683057308197,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.22509169578552246,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.16422221064567566,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.1334903985261917,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.1221889927983284,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": -0.0006647538393735886,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "faiss_similarity": 0.325683057308197,
+          "rerank_score": -2.8041343688964844,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "faiss_similarity": 0.16422221064567566,
+          "rerank_score": -11.168621063232422,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "faiss_similarity": -0.0006647538393735886,
+          "rerank_score": -11.331475257873535,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "faiss_similarity": 0.22509169578552246,
+          "rerank_score": -11.373974800109863,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.25,
+      "recall_at_4": 0.5,
+      "reciprocal_rank": 0.5
+    },
+    {
+      "question_number": 15,
+      "question": "Summarize Hemlata's major projects.",
+      "expected_relevant_chunks": [
+        "Hemlata_Resume_Data.pdf::p1::c4",
+        "Hemlata_Resume_Data.pdf::p1::c5"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.418832391500473,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.2574734389781952,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.23054979741573334,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.18309259414672852,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.13064053654670715,
+          "page": 1,
+          "relevant": true
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": 0.027187678962945938,
+          "page": 1,
+          "relevant": true
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "faiss_similarity": 0.418832391500473,
+          "rerank_score": -2.326108455657959,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "faiss_similarity": 0.18309259414672852,
+          "rerank_score": -11.171436309814453,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "faiss_similarity": 0.2574734389781952,
+          "rerank_score": -11.20941162109375,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "faiss_similarity": 0.23054979741573334,
+          "rerank_score": -11.239627838134766,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.0,
+      "recall_at_4": 0.0,
+      "reciprocal_rank": 0.0
+    },
+    {
+      "question_number": 16,
+      "question": "What is Hemlata's experience with Kubernetes?",
+      "expected_relevant_chunks": [],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "similarity": 0.34619301557540894,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c3",
+          "similarity": 0.17006100714206696,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "similarity": 0.16235420107841492,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "similarity": 0.1450105756521225,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c5",
+          "similarity": 0.05250886082649231,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "similarity": 0.014634158462285995,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_top_k": [
+        {
+          "rank": 1,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c1",
+          "faiss_similarity": 0.34619301557540894,
+          "rerank_score": -5.668097019195557,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c2",
+          "faiss_similarity": 0.1450105756521225,
+          "rerank_score": -11.280426025390625,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c4",
+          "faiss_similarity": 0.014634158462285995,
+          "rerank_score": -11.39195442199707,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "Hemlata_Resume_Data.pdf::p1::c6",
+          "faiss_similarity": 0.16235420107841492,
+          "rerank_score": -11.434405326843262,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "precision_at_4": 0.0,
+      "recall_at_4": 0.0,
+      "reciprocal_rank": 0.0
+    }
+  ]
+}

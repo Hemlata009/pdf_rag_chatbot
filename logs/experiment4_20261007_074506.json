@@ -1,0 +1,1868 @@
+{
+  "experiment": "Experiment 4",
+  "retrieval_k": 6,
+  "evaluation_k": 4,
+  "precision_at_4": 0.25,
+  "recall_at_4": 0.8333333333333334,
+  "mrr": 0.8333333333333334,
+  "average_token_selected_chunks": 6.0,
+  "question_results": [
+    {
+      "question_number": 1,
+      "question": "What was Hemlata's role at VerbX?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p4::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "similarity": 0.3801172971725464,
+          "page": 8,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+          "similarity": 0.3402019739151001,
+          "page": 2,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+          "similarity": 0.32681557536125183,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "similarity": 0.25431984663009644,
+          "page": 4,
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "similarity": 0.18414562940597534,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "similarity": 0.15583427250385284,
+          "page": 12,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "faiss_similarity": 0.25431984663009644,
+          "rerank_score": 0.6998152136802673,
+          "page": 4,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+          "faiss_similarity": 0.32681557536125183,
+          "rerank_score": -1.3626701831817627,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "faiss_similarity": 0.3801172971725464,
+          "rerank_score": -5.075162887573242,
+          "page": 8,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+          "faiss_similarity": 0.3402019739151001,
+          "rerank_score": -7.383973121643066,
+          "page": 2,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "faiss_similarity": 0.15583427250385284,
+          "rerank_score": -11.386125564575195,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "faiss_similarity": 0.18414562940597534,
+          "rerank_score": -11.442018508911133,
+          "page": 4,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p4::c1",
+        "PBI_midterm_report.pdf::p5::c1",
+        "PBI_midterm_report.pdf::p8::c1",
+        "PBI_midterm_report.pdf::p2::c1",
+        "PBI_midterm_report.pdf::p12::c1",
+        "PBI_midterm_report.pdf::p4::c2"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 797,
+      "input_budget": 1150,
+      "remaining_tokens": 353,
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 2,
+      "question": "What was the main focus of Hemlata's internship at VerbX?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p4::c1",
+        "PBI_midterm_report.pdf::p4::c2"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "similarity": 0.5219924449920654,
+          "page": 8,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "similarity": 0.4140375852584839,
+          "page": 4,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+          "similarity": 0.3758013844490051,
+          "page": 2,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "similarity": 0.36093080043792725,
+          "page": 6,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "similarity": 0.33296293020248413,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+          "similarity": 0.3280271589756012,
+          "page": 5,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "faiss_similarity": 0.5219924449920654,
+          "rerank_score": 5.279480457305908,
+          "page": 8,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "faiss_similarity": 0.4140375852584839,
+          "rerank_score": 4.447880268096924,
+          "page": 4,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+          "faiss_similarity": 0.3280271589756012,
+          "rerank_score": -4.137018203735352,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "faiss_similarity": 0.36093080043792725,
+          "rerank_score": -5.876554012298584,
+          "page": 6,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "faiss_similarity": 0.33296293020248413,
+          "rerank_score": -6.416683197021484,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+          "faiss_similarity": 0.3758013844490051,
+          "rerank_score": -7.254033088684082,
+          "page": 2,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p8::c1",
+        "PBI_midterm_report.pdf::p4::c1",
+        "PBI_midterm_report.pdf::p5::c1",
+        "PBI_midterm_report.pdf::p6::c1",
+        "PBI_midterm_report.pdf::p12::c1",
+        "PBI_midterm_report.pdf::p2::c1"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 809,
+      "input_budget": 1150,
+      "remaining_tokens": 341,
+      "precision_at_4": 0.25,
+      "recall_at_4": 0.5,
+      "reciprocal_rank": 0.5
+    },
+    {
+      "question_number": 3,
+      "question": "What types of internal materials did Hemlata review at the beginning of the internship?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p4::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "similarity": 0.42124277353286743,
+          "page": 8,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "similarity": 0.3913254737854004,
+          "page": 6,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "similarity": 0.3710942566394806,
+          "page": 7,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "similarity": 0.3649390935897827,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "similarity": 0.36321380734443665,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "similarity": 0.3611932694911957,
+          "page": 12,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "faiss_similarity": 0.42124277353286743,
+          "rerank_score": 0.7506240606307983,
+          "page": 8,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "faiss_similarity": 0.3913254737854004,
+          "rerank_score": -3.937389373779297,
+          "page": 6,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "faiss_similarity": 0.3649390935897827,
+          "rerank_score": -5.336348533630371,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "faiss_similarity": 0.3611932694911957,
+          "rerank_score": -5.961875915527344,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "faiss_similarity": 0.36321380734443665,
+          "rerank_score": -6.455805778503418,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "faiss_similarity": 0.3710942566394806,
+          "rerank_score": -7.375776767730713,
+          "page": 7,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p8::c1",
+        "PBI_midterm_report.pdf::p6::c1",
+        "PBI_midterm_report.pdf::p5::c2",
+        "PBI_midterm_report.pdf::p12::c1",
+        "PBI_midterm_report.pdf::p9::c1",
+        "PBI_midterm_report.pdf::p7::c1"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 854,
+      "input_budget": 1150,
+      "remaining_tokens": 296,
+      "precision_at_4": 0.0,
+      "recall_at_4": 0.0,
+      "reciprocal_rank": 0.0
+    },
+    {
+      "question_number": 4,
+      "question": "What kind of communication platform is VerbX developing?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p5::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+          "similarity": 0.6542850732803345,
+          "page": 5,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "similarity": 0.5556627511978149,
+          "page": 8,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+          "similarity": 0.5075528025627136,
+          "page": 2,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "similarity": 0.46603456139564514,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p11::c1",
+          "similarity": 0.2793681025505066,
+          "page": 11,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "similarity": 0.24639633297920227,
+          "page": 5,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+          "faiss_similarity": 0.6542850732803345,
+          "rerank_score": 4.709207534790039,
+          "page": 5,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "faiss_similarity": 0.46603456139564514,
+          "rerank_score": -0.6865777373313904,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "faiss_similarity": 0.5556627511978149,
+          "rerank_score": -1.2462340593338013,
+          "page": 8,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+          "faiss_similarity": 0.5075528025627136,
+          "rerank_score": -4.453647136688232,
+          "page": 2,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "faiss_similarity": 0.24639633297920227,
+          "rerank_score": -11.374499320983887,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p11::c1",
+          "faiss_similarity": 0.2793681025505066,
+          "rerank_score": -11.407584190368652,
+          "page": 11,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p5::c1",
+        "PBI_midterm_report.pdf::p4::c1",
+        "PBI_midterm_report.pdf::p8::c1",
+        "PBI_midterm_report.pdf::p2::c1",
+        "PBI_midterm_report.pdf::p5::c2",
+        "PBI_midterm_report.pdf::p11::c1"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 805,
+      "input_budget": 1150,
+      "remaining_tokens": 345,
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 5,
+      "question": "Which sectors is the VerbX platform intended to serve?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p5::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+          "similarity": 0.4934033155441284,
+          "page": 5,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+          "similarity": 0.44178715348243713,
+          "page": 2,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "similarity": 0.4205918312072754,
+          "page": 8,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "similarity": 0.3326980471611023,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p11::c1",
+          "similarity": 0.2661786675453186,
+          "page": 11,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "similarity": 0.23095080256462097,
+          "page": 4,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+          "faiss_similarity": 0.4934033155441284,
+          "rerank_score": 5.8209943771362305,
+          "page": 5,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "faiss_similarity": 0.3326980471611023,
+          "rerank_score": -3.054471254348755,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+          "faiss_similarity": 0.44178715348243713,
+          "rerank_score": -5.797159671783447,
+          "page": 2,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "faiss_similarity": 0.4205918312072754,
+          "rerank_score": -6.083335876464844,
+          "page": 8,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p11::c1",
+          "faiss_similarity": 0.2661786675453186,
+          "rerank_score": -11.408796310424805,
+          "page": 11,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "faiss_similarity": 0.23095080256462097,
+          "rerank_score": -11.484515190124512,
+          "page": 4,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p5::c1",
+        "PBI_midterm_report.pdf::p4::c1",
+        "PBI_midterm_report.pdf::p2::c1",
+        "PBI_midterm_report.pdf::p8::c1",
+        "PBI_midterm_report.pdf::p11::c1",
+        "PBI_midterm_report.pdf::p4::c2"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 807,
+      "input_budget": 1150,
+      "remaining_tokens": 343,
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 6,
+      "question": "What were the main objectives of the internship?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p6::c1",
+        "PBI_midterm_report.pdf::p7::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "similarity": 0.732622504234314,
+          "page": 6,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "similarity": 0.5344615578651428,
+          "page": 7,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "similarity": 0.48545530438423157,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "similarity": 0.47596222162246704,
+          "page": 8,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "similarity": 0.4754065275192261,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "similarity": 0.4752802848815918,
+          "page": 12,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "faiss_similarity": 0.732622504234314,
+          "rerank_score": 8.527329444885254,
+          "page": 6,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "faiss_similarity": 0.5344615578651428,
+          "rerank_score": 7.5995635986328125,
+          "page": 7,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "faiss_similarity": 0.4752802848815918,
+          "rerank_score": 3.303719997406006,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "faiss_similarity": 0.4754065275192261,
+          "rerank_score": 2.6462645530700684,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "faiss_similarity": 0.48545530438423157,
+          "rerank_score": 2.5510616302490234,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "faiss_similarity": 0.47596222162246704,
+          "rerank_score": 2.113393783569336,
+          "page": 8,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p6::c1",
+        "PBI_midterm_report.pdf::p7::c1",
+        "PBI_midterm_report.pdf::p12::c1",
+        "PBI_midterm_report.pdf::p9::c1",
+        "PBI_midterm_report.pdf::p4::c1",
+        "PBI_midterm_report.pdf::p8::c1"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 861,
+      "input_budget": 1150,
+      "remaining_tokens": 289,
+      "precision_at_4": 0.5,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 7,
+      "question": "What did the objective of improving data quality involve?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p7::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "similarity": 0.5397812724113464,
+          "page": 7,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+          "similarity": 0.5299745798110962,
+          "page": 10,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p3::c1",
+          "similarity": 0.40229159593582153,
+          "page": 3,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "similarity": 0.3754478096961975,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+          "similarity": 0.34230703115463257,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "similarity": 0.3315034806728363,
+          "page": 12,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "faiss_similarity": 0.5397812724113464,
+          "rerank_score": 7.906909465789795,
+          "page": 7,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p3::c1",
+          "faiss_similarity": 0.40229159593582153,
+          "rerank_score": 4.26697301864624,
+          "page": 3,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+          "faiss_similarity": 0.5299745798110962,
+          "rerank_score": 3.268846273422241,
+          "page": 10,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "faiss_similarity": 0.3315034806728363,
+          "rerank_score": -5.2438812255859375,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+          "faiss_similarity": 0.34230703115463257,
+          "rerank_score": -6.795875549316406,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "faiss_similarity": 0.3754478096961975,
+          "rerank_score": -7.719141483306885,
+          "page": 9,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p7::c1",
+        "PBI_midterm_report.pdf::p3::c1",
+        "PBI_midterm_report.pdf::p10::c1",
+        "PBI_midterm_report.pdf::p12::c1",
+        "PBI_midterm_report.pdf::p5::c1",
+        "PBI_midterm_report.pdf::p9::c1"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 982,
+      "input_budget": 1150,
+      "remaining_tokens": 168,
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 8,
+      "question": "What was the primary focus during the first week of the internship?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p8::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "similarity": 0.5685290098190308,
+          "page": 6,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "similarity": 0.4870145320892334,
+          "page": 8,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "similarity": 0.4444788098335266,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "similarity": 0.4401179552078247,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "similarity": 0.43248170614242554,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "similarity": 0.4279323220252991,
+          "page": 7,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "faiss_similarity": 0.4870145320892334,
+          "rerank_score": 8.889762878417969,
+          "page": 8,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "faiss_similarity": 0.43248170614242554,
+          "rerank_score": 1.5374457836151123,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "faiss_similarity": 0.4401179552078247,
+          "rerank_score": 0.5393770933151245,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "faiss_similarity": 0.4444788098335266,
+          "rerank_score": -2.129157543182373,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "faiss_similarity": 0.5685290098190308,
+          "rerank_score": -2.1307969093322754,
+          "page": 6,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "faiss_similarity": 0.4279323220252991,
+          "rerank_score": -3.170198440551758,
+          "page": 7,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p8::c1",
+        "PBI_midterm_report.pdf::p4::c1",
+        "PBI_midterm_report.pdf::p9::c1",
+        "PBI_midterm_report.pdf::p12::c1",
+        "PBI_midterm_report.pdf::p6::c1",
+        "PBI_midterm_report.pdf::p7::c1"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 865,
+      "input_budget": 1150,
+      "remaining_tokens": 285,
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 9,
+      "question": "What did the initial learning phase help Hemlata understand?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p8::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "similarity": 0.4199092984199524,
+          "page": 8,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "similarity": 0.22782252728939056,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "similarity": 0.22254011034965515,
+          "page": 6,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "similarity": 0.2088092565536499,
+          "page": 7,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "similarity": 0.19533443450927734,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "similarity": 0.1928378939628601,
+          "page": 4,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "faiss_similarity": 0.4199092984199524,
+          "rerank_score": 2.4392454624176025,
+          "page": 8,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+          "faiss_similarity": 0.19533443450927734,
+          "rerank_score": -0.9303234815597534,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "faiss_similarity": 0.22782252728939056,
+          "rerank_score": -7.990561485290527,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "faiss_similarity": 0.22254011034965515,
+          "rerank_score": -11.272573471069336,
+          "page": 6,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "faiss_similarity": 0.2088092565536499,
+          "rerank_score": -11.379427909851074,
+          "page": 7,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "faiss_similarity": 0.1928378939628601,
+          "rerank_score": -11.454447746276855,
+          "page": 4,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p8::c1",
+        "PBI_midterm_report.pdf::p4::c1",
+        "PBI_midterm_report.pdf::p9::c1",
+        "PBI_midterm_report.pdf::p6::c1",
+        "PBI_midterm_report.pdf::p7::c1",
+        "PBI_midterm_report.pdf::p4::c2"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 862,
+      "input_budget": 1150,
+      "remaining_tokens": 288,
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 10,
+      "question": "Why was the internship data converted into structured Excel sheets?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p9::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "similarity": 0.836557924747467,
+          "page": 9,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "similarity": 0.6998748779296875,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "similarity": 0.6901041269302368,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "similarity": 0.6674437522888184,
+          "page": 6,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "similarity": 0.629966139793396,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "similarity": 0.6037322878837585,
+          "page": 7,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "faiss_similarity": 0.836557924747467,
+          "rerank_score": 8.375871658325195,
+          "page": 9,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "faiss_similarity": 0.6998748779296875,
+          "rerank_score": 6.319802284240723,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "faiss_similarity": 0.6901041269302368,
+          "rerank_score": 5.930166244506836,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "faiss_similarity": 0.629966139793396,
+          "rerank_score": 5.403580188751221,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "faiss_similarity": 0.6674437522888184,
+          "rerank_score": 4.645474433898926,
+          "page": 6,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "faiss_similarity": 0.6037322878837585,
+          "rerank_score": -0.17364424467086792,
+          "page": 7,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p9::c1",
+        "PBI_midterm_report.pdf::p5::c2",
+        "PBI_midterm_report.pdf::p12::c1",
+        "PBI_midterm_report.pdf::p4::c2",
+        "PBI_midterm_report.pdf::p6::c1",
+        "PBI_midterm_report.pdf::p7::c1"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 845,
+      "input_budget": 1150,
+      "remaining_tokens": 305,
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 11,
+      "question": "How was the raw data organized into a consistent format?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p9::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "similarity": 0.5758404731750488,
+          "page": 9,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+          "similarity": 0.5281322002410889,
+          "page": 10,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "similarity": 0.5077623128890991,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p3::c1",
+          "similarity": 0.5004923939704895,
+          "page": 3,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "similarity": 0.44459474086761475,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "similarity": 0.4048656225204468,
+          "page": 12,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "faiss_similarity": 0.5758404731750488,
+          "rerank_score": 4.457439422607422,
+          "page": 9,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "faiss_similarity": 0.5077623128890991,
+          "rerank_score": 0.7197076678276062,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p3::c1",
+          "faiss_similarity": 0.5004923939704895,
+          "rerank_score": 0.29227548837661743,
+          "page": 3,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+          "faiss_similarity": 0.5281322002410889,
+          "rerank_score": -2.1541624069213867,
+          "page": 10,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "faiss_similarity": 0.44459474086761475,
+          "rerank_score": -5.325859069824219,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "faiss_similarity": 0.4048656225204468,
+          "rerank_score": -7.913236141204834,
+          "page": 12,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p9::c1",
+        "PBI_midterm_report.pdf::p4::c2",
+        "PBI_midterm_report.pdf::p3::c1",
+        "PBI_midterm_report.pdf::p10::c1",
+        "PBI_midterm_report.pdf::p5::c2",
+        "PBI_midterm_report.pdf::p12::c1"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 994,
+      "input_budget": 1150,
+      "remaining_tokens": 156,
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 12,
+      "question": "What data cleaning activities were performed during the internship?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p10::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "similarity": 0.6348278522491455,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "similarity": 0.6132581233978271,
+          "page": 7,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "similarity": 0.6018417477607727,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "similarity": 0.5458491444587708,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "similarity": 0.5328750014305115,
+          "page": 6,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+          "similarity": 0.5104502439498901,
+          "page": 10,
+          "relevant": true
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "faiss_similarity": 0.6348278522491455,
+          "rerank_score": 5.663272380828857,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "faiss_similarity": 0.6018417477607727,
+          "rerank_score": 2.1724281311035156,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "faiss_similarity": 0.5458491444587708,
+          "rerank_score": 0.14547483623027802,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "faiss_similarity": 0.6132581233978271,
+          "rerank_score": -0.28054600954055786,
+          "page": 7,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+          "faiss_similarity": 0.5104502439498901,
+          "rerank_score": -0.8113788962364197,
+          "page": 10,
+          "relevant": true
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "faiss_similarity": 0.5328750014305115,
+          "rerank_score": -1.5570037364959717,
+          "page": 6,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p12::c1",
+        "PBI_midterm_report.pdf::p9::c1",
+        "PBI_midterm_report.pdf::p5::c2",
+        "PBI_midterm_report.pdf::p7::c1",
+        "PBI_midterm_report.pdf::p10::c1",
+        "PBI_midterm_report.pdf::p6::c1"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 835,
+      "input_budget": 1150,
+      "remaining_tokens": 315,
+      "precision_at_4": 0.0,
+      "recall_at_4": 0.0,
+      "reciprocal_rank": 0.0
+    },
+    {
+      "question_number": 13,
+      "question": "How was useful information extracted from the datasets?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p10::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+          "similarity": 0.6229628324508667,
+          "page": 10,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "similarity": 0.4952106177806854,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "similarity": 0.45896053314208984,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "similarity": 0.445540189743042,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "similarity": 0.41663122177124023,
+          "page": 7,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "similarity": 0.4087255001068115,
+          "page": 5,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+          "faiss_similarity": 0.6229628324508667,
+          "rerank_score": 7.931405544281006,
+          "page": 10,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "faiss_similarity": 0.4952106177806854,
+          "rerank_score": 0.5179704427719116,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "faiss_similarity": 0.45896053314208984,
+          "rerank_score": -0.5142747163772583,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "faiss_similarity": 0.41663122177124023,
+          "rerank_score": -1.887863039970398,
+          "page": 7,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "faiss_similarity": 0.445540189743042,
+          "rerank_score": -4.049038410186768,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "faiss_similarity": 0.4087255001068115,
+          "rerank_score": -4.2152814865112305,
+          "page": 5,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p10::c1",
+        "PBI_midterm_report.pdf::p9::c1",
+        "PBI_midterm_report.pdf::p4::c2",
+        "PBI_midterm_report.pdf::p7::c1",
+        "PBI_midterm_report.pdf::p12::c1",
+        "PBI_midterm_report.pdf::p5::c2"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 826,
+      "input_budget": 1150,
+      "remaining_tokens": 324,
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 14,
+      "question": "How did Hemlata support pitch deck preparation?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p11::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p11::c1",
+          "similarity": 0.4377592206001282,
+          "page": 11,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "similarity": 0.37634584307670593,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p3::c1",
+          "similarity": 0.27736350893974304,
+          "page": 3,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "similarity": 0.2572050392627716,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "similarity": 0.2109026163816452,
+          "page": 7,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p1::c1",
+          "similarity": 0.17590193450450897,
+          "page": 1,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p11::c1",
+          "faiss_similarity": 0.4377592206001282,
+          "rerank_score": 3.4784622192382812,
+          "page": 11,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "faiss_similarity": 0.2572050392627716,
+          "rerank_score": 1.4294452667236328,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "faiss_similarity": 0.2109026163816452,
+          "rerank_score": 0.9620361328125,
+          "page": 7,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+          "faiss_similarity": 0.37634584307670593,
+          "rerank_score": -1.0869454145431519,
+          "page": 4,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p1::c1",
+          "faiss_similarity": 0.17590193450450897,
+          "rerank_score": -5.624300003051758,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p3::c1",
+          "faiss_similarity": 0.27736350893974304,
+          "rerank_score": -6.59909725189209,
+          "page": 3,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p11::c1",
+        "PBI_midterm_report.pdf::p12::c1",
+        "PBI_midterm_report.pdf::p7::c1",
+        "PBI_midterm_report.pdf::p4::c2",
+        "PBI_midterm_report.pdf::p1::c1",
+        "PBI_midterm_report.pdf::p3::c1"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 936,
+      "input_budget": 1150,
+      "remaining_tokens": 214,
+      "precision_at_4": 0.25,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 15,
+      "question": "What improvements resulted from organizing and cleaning the datasets?",
+      "expected_relevant_chunks": [
+        "PBI_midterm_report.pdf::p10::c1",
+        "PBI_midterm_report.pdf::p12::c1"
+      ],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+          "similarity": 0.6939772367477417,
+          "page": 10,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "similarity": 0.5029939413070679,
+          "page": 7,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "similarity": 0.49481672048568726,
+          "page": 12,
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "similarity": 0.4209422469139099,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p3::c1",
+          "similarity": 0.40520793199539185,
+          "page": 3,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "similarity": 0.40360647439956665,
+          "page": 5,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+          "faiss_similarity": 0.6939772367477417,
+          "rerank_score": 5.346492767333984,
+          "page": 10,
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "faiss_similarity": 0.49481672048568726,
+          "rerank_score": 4.941500663757324,
+          "page": 12,
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+          "faiss_similarity": 0.5029939413070679,
+          "rerank_score": 1.5458886623382568,
+          "page": 7,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p3::c1",
+          "faiss_similarity": 0.40520793199539185,
+          "rerank_score": 0.48039504885673523,
+          "page": 3,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "faiss_similarity": 0.4209422469139099,
+          "rerank_score": -2.747710704803467,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "faiss_similarity": 0.40360647439956665,
+          "rerank_score": -4.098477840423584,
+          "page": 5,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p10::c1",
+        "PBI_midterm_report.pdf::p12::c1",
+        "PBI_midterm_report.pdf::p7::c1",
+        "PBI_midterm_report.pdf::p3::c1",
+        "PBI_midterm_report.pdf::p9::c1",
+        "PBI_midterm_report.pdf::p5::c2"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 969,
+      "input_budget": 1150,
+      "remaining_tokens": 181,
+      "precision_at_4": 0.5,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "question_number": 16,
+      "question": "How many KPI dashboards did Hemlata build during the internship?",
+      "expected_relevant_chunks": [],
+      "faiss_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p1::c1",
+          "similarity": 0.35953861474990845,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "similarity": 0.3552662432193756,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "similarity": 0.3453753590583801,
+          "page": 6,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "similarity": 0.3282245397567749,
+          "page": 8,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "similarity": 0.3200719654560089,
+          "page": 5,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "similarity": 0.31653904914855957,
+          "page": 9,
+          "relevant": false
+        }
+      ],
+      "reranked_candidates": [
+        {
+          "rank": 1,
+          "chunk_id": "PBI_midterm_report.pdf::p1::c1",
+          "faiss_similarity": 0.35953861474990845,
+          "rerank_score": -1.6769609451293945,
+          "page": 1,
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+          "faiss_similarity": 0.3552662432193756,
+          "rerank_score": -6.6075897216796875,
+          "page": 12,
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+          "faiss_similarity": 0.31653904914855957,
+          "rerank_score": -7.05879020690918,
+          "page": 9,
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+          "faiss_similarity": 0.3282245397567749,
+          "rerank_score": -8.029949188232422,
+          "page": 8,
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+          "faiss_similarity": 0.3453753590583801,
+          "rerank_score": -10.002307891845703,
+          "page": 6,
+          "relevant": false
+        },
+        {
+          "rank": 6,
+          "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+          "faiss_similarity": 0.3200719654560089,
+          "rerank_score": -10.172194480895996,
+          "page": 5,
+          "relevant": false
+        }
+      ],
+      "token_selected_chunks": [
+        "PBI_midterm_report.pdf::p1::c1",
+        "PBI_midterm_report.pdf::p12::c1",
+        "PBI_midterm_report.pdf::p9::c1",
+        "PBI_midterm_report.pdf::p8::c1",
+        "PBI_midterm_report.pdf::p6::c1",
+        "PBI_midterm_report.pdf::p5::c2"
+      ],
+      "token_selected_count": 6,
+      "total_input_tokens": 819,
+      "input_budget": 1150,
+      "remaining_tokens": 331,
+      "precision_at_4": 0.0,
+      "recall_at_4": 0.0,
+      "reciprocal_rank": 0.0
+    }
+  ]
+}

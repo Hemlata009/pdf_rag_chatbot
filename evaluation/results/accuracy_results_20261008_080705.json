@@ -1,0 +1,329 @@
+[
+  {
+    "id": 1,
+    "question": "What was Hemlata's role at VerbX?",
+    "gold_answer": "Hemlata's role at VerbX was Product and Revenue Intelligence Support.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p4::c1"
+    ],
+    "supporting_pages": [
+      1,
+      4
+    ],
+    "question_type": "multi_chunk_factual",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+        "page": 4,
+        "similarity": 0.25431984663009644,
+        "rerank_score": 0.6998152136802673
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+        "page": 5,
+        "similarity": 0.32681557536125183,
+        "rerank_score": -1.3626701831817627
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.3801172971725464,
+        "rerank_score": -5.075162887573242
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+        "page": 2,
+        "similarity": 0.3402019739151001,
+        "rerank_score": -7.383973121643066
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.15583427250385284,
+        "rerank_score": -11.386125564575195
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+        "page": 4,
+        "similarity": 0.18414562940597534,
+        "rerank_score": -11.442018508911133
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p5::c1",
+      "PBI_midterm_report.pdf::p8::c1"
+    ],
+    "selected_pages": [
+      1,
+      4,
+      5,
+      8
+    ],
+    "prompt_tokens": 726,
+    "answer": "Hemlata's role at VerbX was Product and Revenue Intelligence Support. [Page 1]\n\nDuring this role, she focused on organizing operational data and preparing structured information to assist internal decision making. [Page 4]"
+  },
+  {
+    "id": 2,
+    "question": "What was the main focus of Hemlata's internship at VerbX?",
+    "gold_answer": "The internship focused mainly on organizing operational data and preparing structured information that could assist internal decision making.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p4::c1"
+    ],
+    "supporting_pages": [
+      4
+    ],
+    "question_type": "factual",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.5219924449920654,
+        "rerank_score": 5.279480457305908
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+        "page": 4,
+        "similarity": 0.4140375852584839,
+        "rerank_score": 4.447880268096924
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+        "page": 5,
+        "similarity": 0.3280271589756012,
+        "rerank_score": -4.137018203735352
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+        "page": 6,
+        "similarity": 0.36093080043792725,
+        "rerank_score": -5.876554012298584
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.33296293020248413,
+        "rerank_score": -6.416683197021484
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+        "page": 2,
+        "similarity": 0.3758013844490051,
+        "rerank_score": -7.254033088684082
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p8::c1",
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p5::c1"
+    ],
+    "selected_pages": [
+      1,
+      8,
+      4,
+      5
+    ],
+    "prompt_tokens": 730,
+    "answer": "The main focus of Hemlata’s internship at VerbX was **organizing operational data and preparing structured information to assist internal decision‑making** [Page 4]. This involved reviewing internal files, spreadsheets, and documents to understand the product concept and then structuring that data for use in business planning and communication."
+  },
+  {
+    "id": 3,
+    "question": "What types of internal materials did Hemlata review at the beginning of the internship?",
+    "gold_answer": "She reviewed internal files, spreadsheets, and documents to understand the product concept, business model, and operational workflows.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p4::c1"
+    ],
+    "supporting_pages": [
+      4
+    ],
+    "question_type": "factual",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.42124277353286743,
+        "rerank_score": 0.7506240606307983
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+        "page": 6,
+        "similarity": 0.3913254737854004,
+        "rerank_score": -3.937389373779297
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+        "page": 5,
+        "similarity": 0.3649390935897827,
+        "rerank_score": -5.336348533630371
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.3611932694911957,
+        "rerank_score": -5.961875915527344
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+        "page": 9,
+        "similarity": 0.36321380734443665,
+        "rerank_score": -6.455805778503418
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+        "page": 7,
+        "similarity": 0.3710942566394806,
+        "rerank_score": -7.375776767730713
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p8::c1",
+      "PBI_midterm_report.pdf::p6::c1",
+      "PBI_midterm_report.pdf::p5::c2"
+    ],
+    "selected_pages": [
+      1,
+      8,
+      6,
+      5
+    ],
+    "prompt_tokens": 713,
+    "answer": "- Internal files  \n- Spreadsheets  \n- Informational documents  \n\n[Page 8] (also see [Page 6] for internal files and documents)."
+  },
+  {
+    "id": 4,
+    "question": "What kind of communication platform is VerbX developing?",
+    "gold_answer": "VerbX is developing a multilingual communication platform.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p5::c1"
+    ],
+    "supporting_pages": [
+      5
+    ],
+    "question_type": "factual",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+        "page": 5,
+        "similarity": 0.6542850732803345,
+        "rerank_score": 4.709207534790039
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+        "page": 4,
+        "similarity": 0.46603456139564514,
+        "rerank_score": -0.6865777373313904
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.5556627511978149,
+        "rerank_score": -1.2462340593338013
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+        "page": 2,
+        "similarity": 0.5075528025627136,
+        "rerank_score": -4.453647136688232
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+        "page": 5,
+        "similarity": 0.24639633297920227,
+        "rerank_score": -11.374499320983887
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p11::c1",
+        "page": 11,
+        "similarity": 0.2793681025505066,
+        "rerank_score": -11.407584190368652
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p5::c1",
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p8::c1"
+    ],
+    "selected_pages": [
+      1,
+      5,
+      4,
+      8
+    ],
+    "prompt_tokens": 725,
+    "answer": "Based on the provided document, VerbX is developing a **multilingual communication platform** intended for use across various sectors such as banking, travel, healthcare, and enterprise environments. The platform focuses on enabling communication between people who speak different languages by providing structured communication tools [Page 5]."
+  },
+  {
+    "id": 5,
+    "question": "Which sectors is the VerbX platform intended to serve?",
+    "gold_answer": "The platform is intended to serve banking, travel, healthcare, and enterprise environments.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p5::c1"
+    ],
+    "supporting_pages": [
+      5
+    ],
+    "question_type": "list",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+        "page": 5,
+        "similarity": 0.4934033155441284,
+        "rerank_score": 5.8209943771362305
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+        "page": 4,
+        "similarity": 0.3326980471611023,
+        "rerank_score": -3.054471254348755
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+        "page": 2,
+        "similarity": 0.44178715348243713,
+        "rerank_score": -5.797159671783447
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.4205918312072754,
+        "rerank_score": -6.083335876464844
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p11::c1",
+        "page": 11,
+        "similarity": 0.2661786675453186,
+        "rerank_score": -11.408796310424805
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+        "page": 4,
+        "similarity": 0.23095080256462097,
+        "rerank_score": -11.484515190124512
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p5::c1",
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p2::c1"
+    ],
+    "selected_pages": [
+      1,
+      5,
+      4,
+      2
+    ],
+    "prompt_tokens": 627,
+    "answer": "According to the document, the VerbX multilingual communication platform is intended for use across the following sectors [Page 5]:\n\n- Banking\n- Travel\n- Healthcare\n- Enterprise environments"
+  }
+]

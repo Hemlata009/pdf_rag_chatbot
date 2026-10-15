@@ -1,0 +1,2674 @@
+
+================================================================================
+        RAG EVALUATION - EXPERIMENT 4
+        FAISS + CROSS-ENCODER + TOKEN BUDGET
+================================================================================
+
+Configuration
+--------------------------------------------------------------------------------
+PDF Path       : PBI_midterm_report.pdf
+Chunk Size     : 700
+Chunk Overlap  : 100
+Retrieval K    : 6
+Evaluation K   : 4
+
+Pipeline:
+Query -> FAISS Top-6 -> CrossEncoder -> Reranked Top-6 -> Token Budget -> LLM
+
+================================================================================
+STEP 1: LOAD EMBEDDING MODEL
+================================================================================
+Embedding model loaded successfully.
+
+================================================================================
+STEP 2: LOAD CROSS-ENCODER RERANKER
+================================================================================
+CrossEncoder reranker loaded successfully.
+
+================================================================================
+STEP 3: EXTRACT PDF
+================================================================================
+Pages extracted: 12
+Page 1 | Characters: 195
+Page 2 | Characters: 27
+Page 3 | Characters: 664
+Page 4 | Characters: 1312
+Page 5 | Characters: 1260
+Page 6 | Characters: 620
+Page 7 | Characters: 438
+Page 8 | Characters: 599
+Page 9 | Characters: 541
+Page 10 | Characters: 546
+Page 11 | Characters: 628
+Page 12 | Characters: 656
+
+================================================================================
+STEP 4: CREATE CHUNKS
+================================================================================
+Total chunks created: 14
+Evaluation ground-truth chunk IDs validated successfully.
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p1::c1
+Page        : 1
+Characters  : 195
+Text preview:
+PDPM Indian Institute of Information Technology Design and Manufacturing Jabalpur Internship Report Product & Revenue Intelligence Support Submitted by Hemlata (22BSM027) Mentor Prof. Shyam Kumar
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p2::c1
+Page        : 2
+Characters  : 27
+Text preview:
+Company VerbX 13 March 2026
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p3::c1
+Page        : 3
+Characters  : 664
+Text preview:
+Contents Abstract ii Introduction 1 1 Objectives 2 1.1 Understanding the System . . . . . . . . . . . . . . . . . . . . 2 1.2 Organizing Raw Data . . . . . . . . . . . . . . . . . . . . . . . 2 1.3 Improving Data Quality . . . . . . . . . . . . . . . . . . . . . 3 1.4 Supporting Business Documentati
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p4::c1
+Page        : 4
+Characters  : 696
+Text preview:
+Abstract This report summarizes the work completed during the initial phase of an internship at VerbX in the role of Product and Revenue Intelligence Support. The internship focused mainly on organizing operational data and preparing structured information that could assist internal decision making.
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p4::c2
+Page        : 4
+Characters  : 615
+Text preview:
+ious forms of raw information into structured Excel datasets. Several files contained information in mixed or unorganized formats. These datasets were cleaned, categorized, and transformed into structured spreadsheets that could be used for further analysis. Another part of the internship involved a
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p5::c1
+Page        : 5
+Characters  : 674
+Text preview:
+Introduction Data plays an important role in modern organizations, especially in tech- nology startups where decisions often depend on structured information and operational insights. However, in many early-stage companies, data may ex- ist in multiple formats such as documents, spreadsheets, and ra
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p5::c2
+Page        : 5
+Characters  : 585
+Text preview:
+For such systems, organized data is important for planning, communi- cation, and internal coordination. Therefore, part of the operational work within the organization involves maintaining structured datasets and orga- nized information repositories. The internship work focused on converting scatter
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p6::c1
+Page        : 6
+Characters  : 620
+Text preview:
+Chapter 1 Objectives The objectives of the internship work were defined based on the operational requirements of the organization. 1.1 Understanding the System The first objective was to become familiar with the internal structure of the organization. This involved reading and reviewing various inte
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p7::c1
+Page        : 7
+Characters  : 438
+Text preview:
+1.3 Improving Data Quality Another objective was to improve the quality of the datasets. This included identifying duplicate records, correcting inconsistent formatting, and orga- nizing the information into clear categories. 1.4 Supporting Business Documentation The internship also aimed to support
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p8::c1
+Page        : 8
+Characters  : 599
+Text preview:
+Chapter 2 Initial Learning Phase During the first week of the internship, the primary focus was on understand- ing the internal structure and documentation of VerbX. Several internal files, spreadsheets, and informational documents were reviewed in order to understand the system being developed by t
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p9::c1
+Page        : 9
+Characters  : 541
+Text preview:
+Chapter 3 Data Organization and Processing After the initial understanding stage, the internship work focused mainly on organizing and structuring datasets. 3.1 Conversion of Data into Excel Format Some of the information available during the internship existed in formats that were not directly suit
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p10::c1
+Page        : 10
+Characters  : 546
+Text preview:
+3.2 Data Cleaning Once the datasets were placed in spreadsheet format, additional steps were performed to improve their quality. This included removing duplicate entries and correcting formatting inconsistencies. These steps ensured that the datasets were more reliable and easier to use. 3.3 Extract
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p11::c1
+Page        : 11
+Characters  : 628
+Text preview:
+Chapter 4 Support in Pitch Deck Preparation In addition to data organization tasks, the internship also involved assisting in the preparation of information used in pitch decks. Pitch decks are presentation materials used to explain the product idea, the business concept, and potential opportunities
+
+--------------------------------------------------------------------------------
+Chunk ID    : PBI_midterm_report.pdf::p12::c1
+Page        : 12
+Characters  : 656
+Text preview:
+Chapter 5 Results The work completed during the internship helped organize previously scat- tered datasets into structured Excel sheets. These datasets became easier to manage and provided clearer access to information required for operational tasks. Data cleaning and organization also improved the 
+
+================================================================================
+STEP 5: BUILD FAISS INDEX
+================================================================================
+FAISS index built successfully.
+Number of vectors: 14
+
+================================================================================
+STEP 6: RUN EXPERIMENT 4
+================================================================================
+
+
+================================================================================
+QUESTION 1
+================================================================================
+Question:
+What was Hemlata's role at VerbX?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p4::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p8::c1
+Similarity   : 0.3801
+Page         : 8
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p2::c1
+Similarity   : 0.3402
+Page         : 2
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p5::c1
+Similarity   : 0.3268
+Page         : 5
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p4::c1
+Similarity   : 0.2543
+Page         : 4
+Relevant?    : True
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p4::c2
+Similarity   : 0.1841
+Page         : 4
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p12::c1
+Similarity   : 0.1558
+Page         : 12
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p4::c1
+FAISS Score   : 0.2543
+Rerank Score  : 0.6998
+Page          : 4
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p5::c1
+FAISS Score   : 0.3268
+Rerank Score  : -1.3627
+Page          : 5
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p8::c1
+FAISS Score   : 0.3801
+Rerank Score  : -5.0752
+Page          : 8
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p2::c1
+FAISS Score   : 0.3402
+Rerank Score  : -7.3840
+Page          : 2
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p12::c1
+FAISS Score   : 0.1558
+Rerank Score  : -11.3861
+Page          : 12
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p4::c2
+FAISS Score   : 0.1841
+Rerank Score  : -11.4420
+Page          : 4
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c1
+  Current tokens : 182
+  Remaining      : 968
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p5::c1
+  Current tokens : 332
+  Remaining      : 818
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p8::c1
+  Current tokens : 474
+  Remaining      : 676
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p2::c1
+  Current tokens : 517
+  Remaining      : 633
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p12::c1
+  Current tokens : 658
+  Remaining      : 492
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c2
+  Current tokens : 797
+  Remaining      : 353
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p4::c1 | Rerank=0.6998
+  2. PBI_midterm_report.pdf::p5::c1 | Rerank=-1.3627
+  3. PBI_midterm_report.pdf::p8::c1 | Rerank=-5.0752
+  4. PBI_midterm_report.pdf::p2::c1 | Rerank=-7.3840
+  5. PBI_midterm_report.pdf::p12::c1 | Rerank=-11.3861
+  6. PBI_midterm_report.pdf::p4::c2 | Rerank=-11.4420
+
+Selected chunk count : 6
+Total input tokens  : 797
+Input budget        : 1150
+Remaining tokens    : 353
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p4::c1
+  2. PBI_midterm_report.pdf::p5::c1
+  3. PBI_midterm_report.pdf::p8::c1
+  4. PBI_midterm_report.pdf::p2::c1
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 2
+================================================================================
+Question:
+What was the main focus of Hemlata's internship at VerbX?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p4::c1
+  ✓ PBI_midterm_report.pdf::p4::c2
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p8::c1
+Similarity   : 0.5220
+Page         : 8
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p4::c1
+Similarity   : 0.4140
+Page         : 4
+Relevant?    : True
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p2::c1
+Similarity   : 0.3758
+Page         : 2
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p6::c1
+Similarity   : 0.3609
+Page         : 6
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p12::c1
+Similarity   : 0.3330
+Page         : 12
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p5::c1
+Similarity   : 0.3280
+Page         : 5
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p8::c1
+FAISS Score   : 0.5220
+Rerank Score  : 5.2795
+Page          : 8
+Relevant?     : False
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p4::c1
+FAISS Score   : 0.4140
+Rerank Score  : 4.4479
+Page          : 4
+Relevant?     : True
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p5::c1
+FAISS Score   : 0.3280
+Rerank Score  : -4.1370
+Page          : 5
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p6::c1
+FAISS Score   : 0.3609
+Rerank Score  : -5.8766
+Page          : 6
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p12::c1
+FAISS Score   : 0.3330
+Rerank Score  : -6.4167
+Page          : 12
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p2::c1
+FAISS Score   : 0.3758
+Rerank Score  : -7.2540
+Page          : 2
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p8::c1
+  Current tokens : 174
+  Remaining      : 976
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c1
+  Current tokens : 328
+  Remaining      : 822
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p5::c1
+  Current tokens : 478
+  Remaining      : 672
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p6::c1
+  Current tokens : 625
+  Remaining      : 525
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p12::c1
+  Current tokens : 766
+  Remaining      : 384
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p2::c1
+  Current tokens : 809
+  Remaining      : 341
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p8::c1 | Rerank=5.2795
+  2. PBI_midterm_report.pdf::p4::c1 | Rerank=4.4479
+  3. PBI_midterm_report.pdf::p5::c1 | Rerank=-4.1370
+  4. PBI_midterm_report.pdf::p6::c1 | Rerank=-5.8766
+  5. PBI_midterm_report.pdf::p12::c1 | Rerank=-6.4167
+  6. PBI_midterm_report.pdf::p2::c1 | Rerank=-7.2540
+
+Selected chunk count : 6
+Total input tokens  : 809
+Input budget        : 1150
+Remaining tokens    : 341
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p8::c1
+  2. PBI_midterm_report.pdf::p4::c1
+  3. PBI_midterm_report.pdf::p5::c1
+  4. PBI_midterm_report.pdf::p6::c1
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 0.5000 (50.00%)
+Reciprocal Rank    : 0.5000
+
+
+================================================================================
+QUESTION 3
+================================================================================
+Question:
+What types of internal materials did Hemlata review at the beginning of the internship?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p4::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p8::c1
+Similarity   : 0.4212
+Page         : 8
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p6::c1
+Similarity   : 0.3913
+Page         : 6
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p7::c1
+Similarity   : 0.3711
+Page         : 7
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p5::c2
+Similarity   : 0.3649
+Page         : 5
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p9::c1
+Similarity   : 0.3632
+Page         : 9
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p12::c1
+Similarity   : 0.3612
+Page         : 12
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p8::c1
+FAISS Score   : 0.4212
+Rerank Score  : 0.7506
+Page          : 8
+Relevant?     : False
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p6::c1
+FAISS Score   : 0.3913
+Rerank Score  : -3.9374
+Page          : 6
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p5::c2
+FAISS Score   : 0.3649
+Rerank Score  : -5.3363
+Page          : 5
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p12::c1
+FAISS Score   : 0.3612
+Rerank Score  : -5.9619
+Page          : 12
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p9::c1
+FAISS Score   : 0.3632
+Rerank Score  : -6.4558
+Page          : 9
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p7::c1
+FAISS Score   : 0.3711
+Rerank Score  : -7.3758
+Page          : 7
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p8::c1
+  Current tokens : 176
+  Remaining      : 974
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p6::c1
+  Current tokens : 323
+  Remaining      : 827
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p5::c2
+  Current tokens : 461
+  Remaining      : 689
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p12::c1
+  Current tokens : 602
+  Remaining      : 548
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p9::c1
+  Current tokens : 739
+  Remaining      : 411
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p7::c1
+  Current tokens : 854
+  Remaining      : 296
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p8::c1 | Rerank=0.7506
+  2. PBI_midterm_report.pdf::p6::c1 | Rerank=-3.9374
+  3. PBI_midterm_report.pdf::p5::c2 | Rerank=-5.3363
+  4. PBI_midterm_report.pdf::p12::c1 | Rerank=-5.9619
+  5. PBI_midterm_report.pdf::p9::c1 | Rerank=-6.4558
+  6. PBI_midterm_report.pdf::p7::c1 | Rerank=-7.3758
+
+Selected chunk count : 6
+Total input tokens  : 854
+Input budget        : 1150
+Remaining tokens    : 296
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p8::c1
+  2. PBI_midterm_report.pdf::p6::c1
+  3. PBI_midterm_report.pdf::p5::c2
+  4. PBI_midterm_report.pdf::p12::c1
+
+Precision@4 : 0.0000 (0.00%)
+Recall@4    : 0.0000 (0.00%)
+Reciprocal Rank    : 0.0000
+
+
+================================================================================
+QUESTION 4
+================================================================================
+Question:
+What kind of communication platform is VerbX developing?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p5::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p5::c1
+Similarity   : 0.6543
+Page         : 5
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p8::c1
+Similarity   : 0.5557
+Page         : 8
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p2::c1
+Similarity   : 0.5076
+Page         : 2
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p4::c1
+Similarity   : 0.4660
+Page         : 4
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p11::c1
+Similarity   : 0.2794
+Page         : 11
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p5::c2
+Similarity   : 0.2464
+Page         : 5
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p5::c1
+FAISS Score   : 0.6543
+Rerank Score  : 4.7092
+Page          : 5
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p4::c1
+FAISS Score   : 0.4660
+Rerank Score  : -0.6866
+Page          : 4
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p8::c1
+FAISS Score   : 0.5557
+Rerank Score  : -1.2462
+Page          : 8
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p2::c1
+FAISS Score   : 0.5076
+Rerank Score  : -4.4536
+Page          : 2
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p5::c2
+FAISS Score   : 0.2464
+Rerank Score  : -11.3745
+Page          : 5
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p11::c1
+FAISS Score   : 0.2794
+Rerank Score  : -11.4076
+Page          : 11
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p5::c1
+  Current tokens : 178
+  Remaining      : 972
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c1
+  Current tokens : 332
+  Remaining      : 818
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p8::c1
+  Current tokens : 473
+  Remaining      : 677
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p2::c1
+  Current tokens : 516
+  Remaining      : 634
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p5::c2
+  Current tokens : 654
+  Remaining      : 496
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p11::c1
+  Current tokens : 805
+  Remaining      : 345
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p5::c1 | Rerank=4.7092
+  2. PBI_midterm_report.pdf::p4::c1 | Rerank=-0.6866
+  3. PBI_midterm_report.pdf::p8::c1 | Rerank=-1.2462
+  4. PBI_midterm_report.pdf::p2::c1 | Rerank=-4.4536
+  5. PBI_midterm_report.pdf::p5::c2 | Rerank=-11.3745
+  6. PBI_midterm_report.pdf::p11::c1 | Rerank=-11.4076
+
+Selected chunk count : 6
+Total input tokens  : 805
+Input budget        : 1150
+Remaining tokens    : 345
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p5::c1
+  2. PBI_midterm_report.pdf::p4::c1
+  3. PBI_midterm_report.pdf::p8::c1
+  4. PBI_midterm_report.pdf::p2::c1
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 5
+================================================================================
+Question:
+Which sectors is the VerbX platform intended to serve?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p5::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p5::c1
+Similarity   : 0.4934
+Page         : 5
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p2::c1
+Similarity   : 0.4418
+Page         : 2
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p8::c1
+Similarity   : 0.4206
+Page         : 8
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p4::c1
+Similarity   : 0.3327
+Page         : 4
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p11::c1
+Similarity   : 0.2662
+Page         : 11
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p4::c2
+Similarity   : 0.2310
+Page         : 4
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p5::c1
+FAISS Score   : 0.4934
+Rerank Score  : 5.8210
+Page          : 5
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p4::c1
+FAISS Score   : 0.3327
+Rerank Score  : -3.0545
+Page          : 4
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p2::c1
+FAISS Score   : 0.4418
+Rerank Score  : -5.7972
+Page          : 2
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p8::c1
+FAISS Score   : 0.4206
+Rerank Score  : -6.0833
+Page          : 8
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p11::c1
+FAISS Score   : 0.2662
+Rerank Score  : -11.4088
+Page          : 11
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p4::c2
+FAISS Score   : 0.2310
+Rerank Score  : -11.4845
+Page          : 4
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p5::c1
+  Current tokens : 179
+  Remaining      : 971
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c1
+  Current tokens : 333
+  Remaining      : 817
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p2::c1
+  Current tokens : 375
+  Remaining      : 775
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p8::c1
+  Current tokens : 517
+  Remaining      : 633
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p11::c1
+  Current tokens : 668
+  Remaining      : 482
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c2
+  Current tokens : 807
+  Remaining      : 343
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p5::c1 | Rerank=5.8210
+  2. PBI_midterm_report.pdf::p4::c1 | Rerank=-3.0545
+  3. PBI_midterm_report.pdf::p2::c1 | Rerank=-5.7972
+  4. PBI_midterm_report.pdf::p8::c1 | Rerank=-6.0833
+  5. PBI_midterm_report.pdf::p11::c1 | Rerank=-11.4088
+  6. PBI_midterm_report.pdf::p4::c2 | Rerank=-11.4845
+
+Selected chunk count : 6
+Total input tokens  : 807
+Input budget        : 1150
+Remaining tokens    : 343
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p5::c1
+  2. PBI_midterm_report.pdf::p4::c1
+  3. PBI_midterm_report.pdf::p2::c1
+  4. PBI_midterm_report.pdf::p8::c1
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 6
+================================================================================
+Question:
+What were the main objectives of the internship?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p6::c1
+  ✓ PBI_midterm_report.pdf::p7::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p6::c1
+Similarity   : 0.7326
+Page         : 6
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p7::c1
+Similarity   : 0.5345
+Page         : 7
+Relevant?    : True
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p4::c1
+Similarity   : 0.4855
+Page         : 4
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p8::c1
+Similarity   : 0.4760
+Page         : 8
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p9::c1
+Similarity   : 0.4754
+Page         : 9
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p12::c1
+Similarity   : 0.4753
+Page         : 12
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p6::c1
+FAISS Score   : 0.7326
+Rerank Score  : 8.5273
+Page          : 6
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p7::c1
+FAISS Score   : 0.5345
+Rerank Score  : 7.5996
+Page          : 7
+Relevant?     : True
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p12::c1
+FAISS Score   : 0.4753
+Rerank Score  : 3.3037
+Page          : 12
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p9::c1
+FAISS Score   : 0.4754
+Rerank Score  : 2.6463
+Page          : 9
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p4::c1
+FAISS Score   : 0.4855
+Rerank Score  : 2.5511
+Page          : 4
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p8::c1
+FAISS Score   : 0.4760
+Rerank Score  : 2.1134
+Page          : 8
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p6::c1
+  Current tokens : 173
+  Remaining      : 977
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p7::c1
+  Current tokens : 288
+  Remaining      : 862
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p12::c1
+  Current tokens : 429
+  Remaining      : 721
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p9::c1
+  Current tokens : 566
+  Remaining      : 584
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c1
+  Current tokens : 720
+  Remaining      : 430
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p8::c1
+  Current tokens : 861
+  Remaining      : 289
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p6::c1 | Rerank=8.5273
+  2. PBI_midterm_report.pdf::p7::c1 | Rerank=7.5996
+  3. PBI_midterm_report.pdf::p12::c1 | Rerank=3.3037
+  4. PBI_midterm_report.pdf::p9::c1 | Rerank=2.6463
+  5. PBI_midterm_report.pdf::p4::c1 | Rerank=2.5511
+  6. PBI_midterm_report.pdf::p8::c1 | Rerank=2.1134
+
+Selected chunk count : 6
+Total input tokens  : 861
+Input budget        : 1150
+Remaining tokens    : 289
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p6::c1
+  2. PBI_midterm_report.pdf::p7::c1
+  3. PBI_midterm_report.pdf::p12::c1
+  4. PBI_midterm_report.pdf::p9::c1
+
+Precision@4 : 0.5000 (50.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 7
+================================================================================
+Question:
+What did the objective of improving data quality involve?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p7::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p7::c1
+Similarity   : 0.5398
+Page         : 7
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p10::c1
+Similarity   : 0.5300
+Page         : 10
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p3::c1
+Similarity   : 0.4023
+Page         : 3
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p9::c1
+Similarity   : 0.3754
+Page         : 9
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p5::c1
+Similarity   : 0.3423
+Page         : 5
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p12::c1
+Similarity   : 0.3315
+Page         : 12
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p7::c1
+FAISS Score   : 0.5398
+Rerank Score  : 7.9069
+Page          : 7
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p3::c1
+FAISS Score   : 0.4023
+Rerank Score  : 4.2670
+Page          : 3
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p10::c1
+FAISS Score   : 0.5300
+Rerank Score  : 3.2688
+Page          : 10
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p12::c1
+FAISS Score   : 0.3315
+Rerank Score  : -5.2439
+Page          : 12
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p5::c1
+FAISS Score   : 0.3423
+Rerank Score  : -6.7959
+Page          : 5
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p9::c1
+FAISS Score   : 0.3754
+Rerank Score  : -7.7191
+Page          : 9
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p7::c1
+  Current tokens : 142
+  Remaining      : 1008
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p3::c1
+  Current tokens : 423
+  Remaining      : 727
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p10::c1
+  Current tokens : 553
+  Remaining      : 597
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p12::c1
+  Current tokens : 694
+  Remaining      : 456
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p5::c1
+  Current tokens : 845
+  Remaining      : 305
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p9::c1
+  Current tokens : 982
+  Remaining      : 168
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p7::c1 | Rerank=7.9069
+  2. PBI_midterm_report.pdf::p3::c1 | Rerank=4.2670
+  3. PBI_midterm_report.pdf::p10::c1 | Rerank=3.2688
+  4. PBI_midterm_report.pdf::p12::c1 | Rerank=-5.2439
+  5. PBI_midterm_report.pdf::p5::c1 | Rerank=-6.7959
+  6. PBI_midterm_report.pdf::p9::c1 | Rerank=-7.7191
+
+Selected chunk count : 6
+Total input tokens  : 982
+Input budget        : 1150
+Remaining tokens    : 168
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p7::c1
+  2. PBI_midterm_report.pdf::p3::c1
+  3. PBI_midterm_report.pdf::p10::c1
+  4. PBI_midterm_report.pdf::p12::c1
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 8
+================================================================================
+Question:
+What was the primary focus during the first week of the internship?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p8::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p6::c1
+Similarity   : 0.5685
+Page         : 6
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p8::c1
+Similarity   : 0.4870
+Page         : 8
+Relevant?    : True
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p12::c1
+Similarity   : 0.4445
+Page         : 12
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p9::c1
+Similarity   : 0.4401
+Page         : 9
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p4::c1
+Similarity   : 0.4325
+Page         : 4
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p7::c1
+Similarity   : 0.4279
+Page         : 7
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p8::c1
+FAISS Score   : 0.4870
+Rerank Score  : 8.8898
+Page          : 8
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p4::c1
+FAISS Score   : 0.4325
+Rerank Score  : 1.5374
+Page          : 4
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p9::c1
+FAISS Score   : 0.4401
+Rerank Score  : 0.5394
+Page          : 9
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p12::c1
+FAISS Score   : 0.4445
+Rerank Score  : -2.1292
+Page          : 12
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p6::c1
+FAISS Score   : 0.5685
+Rerank Score  : -2.1308
+Page          : 6
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p7::c1
+FAISS Score   : 0.4279
+Rerank Score  : -3.1702
+Page          : 7
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p8::c1
+  Current tokens : 172
+  Remaining      : 978
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c1
+  Current tokens : 326
+  Remaining      : 824
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p9::c1
+  Current tokens : 462
+  Remaining      : 688
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p12::c1
+  Current tokens : 603
+  Remaining      : 547
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p6::c1
+  Current tokens : 750
+  Remaining      : 400
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p7::c1
+  Current tokens : 865
+  Remaining      : 285
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p8::c1 | Rerank=8.8898
+  2. PBI_midterm_report.pdf::p4::c1 | Rerank=1.5374
+  3. PBI_midterm_report.pdf::p9::c1 | Rerank=0.5394
+  4. PBI_midterm_report.pdf::p12::c1 | Rerank=-2.1292
+  5. PBI_midterm_report.pdf::p6::c1 | Rerank=-2.1308
+  6. PBI_midterm_report.pdf::p7::c1 | Rerank=-3.1702
+
+Selected chunk count : 6
+Total input tokens  : 865
+Input budget        : 1150
+Remaining tokens    : 285
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p8::c1
+  2. PBI_midterm_report.pdf::p4::c1
+  3. PBI_midterm_report.pdf::p9::c1
+  4. PBI_midterm_report.pdf::p12::c1
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 9
+================================================================================
+Question:
+What did the initial learning phase help Hemlata understand?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p8::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p8::c1
+Similarity   : 0.4199
+Page         : 8
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p9::c1
+Similarity   : 0.2278
+Page         : 9
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p6::c1
+Similarity   : 0.2225
+Page         : 6
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p7::c1
+Similarity   : 0.2088
+Page         : 7
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p4::c1
+Similarity   : 0.1953
+Page         : 4
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p4::c2
+Similarity   : 0.1928
+Page         : 4
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p8::c1
+FAISS Score   : 0.4199
+Rerank Score  : 2.4392
+Page          : 8
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p4::c1
+FAISS Score   : 0.1953
+Rerank Score  : -0.9303
+Page          : 4
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p9::c1
+FAISS Score   : 0.2278
+Rerank Score  : -7.9906
+Page          : 9
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p6::c1
+FAISS Score   : 0.2225
+Rerank Score  : -11.2726
+Page          : 6
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p7::c1
+FAISS Score   : 0.2088
+Rerank Score  : -11.3794
+Page          : 7
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p4::c2
+FAISS Score   : 0.1928
+Rerank Score  : -11.4544
+Page          : 4
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p8::c1
+  Current tokens : 171
+  Remaining      : 979
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c1
+  Current tokens : 325
+  Remaining      : 825
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p9::c1
+  Current tokens : 461
+  Remaining      : 689
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p6::c1
+  Current tokens : 608
+  Remaining      : 542
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p7::c1
+  Current tokens : 723
+  Remaining      : 427
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c2
+  Current tokens : 862
+  Remaining      : 288
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p8::c1 | Rerank=2.4392
+  2. PBI_midterm_report.pdf::p4::c1 | Rerank=-0.9303
+  3. PBI_midterm_report.pdf::p9::c1 | Rerank=-7.9906
+  4. PBI_midterm_report.pdf::p6::c1 | Rerank=-11.2726
+  5. PBI_midterm_report.pdf::p7::c1 | Rerank=-11.3794
+  6. PBI_midterm_report.pdf::p4::c2 | Rerank=-11.4544
+
+Selected chunk count : 6
+Total input tokens  : 862
+Input budget        : 1150
+Remaining tokens    : 288
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p8::c1
+  2. PBI_midterm_report.pdf::p4::c1
+  3. PBI_midterm_report.pdf::p9::c1
+  4. PBI_midterm_report.pdf::p6::c1
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 10
+================================================================================
+Question:
+Why was the internship data converted into structured Excel sheets?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p9::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p9::c1
+Similarity   : 0.8366
+Page         : 9
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p5::c2
+Similarity   : 0.6999
+Page         : 5
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p12::c1
+Similarity   : 0.6901
+Page         : 12
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p6::c1
+Similarity   : 0.6674
+Page         : 6
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p4::c2
+Similarity   : 0.6300
+Page         : 4
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p7::c1
+Similarity   : 0.6037
+Page         : 7
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p9::c1
+FAISS Score   : 0.8366
+Rerank Score  : 8.3759
+Page          : 9
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p5::c2
+FAISS Score   : 0.6999
+Rerank Score  : 6.3198
+Page          : 5
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p12::c1
+FAISS Score   : 0.6901
+Rerank Score  : 5.9302
+Page          : 12
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p4::c2
+FAISS Score   : 0.6300
+Rerank Score  : 5.4036
+Page          : 4
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p6::c1
+FAISS Score   : 0.6674
+Rerank Score  : 4.6455
+Page          : 6
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p7::c1
+FAISS Score   : 0.6037
+Rerank Score  : -0.1736
+Page          : 7
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p9::c1
+  Current tokens : 165
+  Remaining      : 985
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p5::c2
+  Current tokens : 303
+  Remaining      : 847
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p12::c1
+  Current tokens : 444
+  Remaining      : 706
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c2
+  Current tokens : 583
+  Remaining      : 567
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p6::c1
+  Current tokens : 730
+  Remaining      : 420
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p7::c1
+  Current tokens : 845
+  Remaining      : 305
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p9::c1 | Rerank=8.3759
+  2. PBI_midterm_report.pdf::p5::c2 | Rerank=6.3198
+  3. PBI_midterm_report.pdf::p12::c1 | Rerank=5.9302
+  4. PBI_midterm_report.pdf::p4::c2 | Rerank=5.4036
+  5. PBI_midterm_report.pdf::p6::c1 | Rerank=4.6455
+  6. PBI_midterm_report.pdf::p7::c1 | Rerank=-0.1736
+
+Selected chunk count : 6
+Total input tokens  : 845
+Input budget        : 1150
+Remaining tokens    : 305
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p9::c1
+  2. PBI_midterm_report.pdf::p5::c2
+  3. PBI_midterm_report.pdf::p12::c1
+  4. PBI_midterm_report.pdf::p4::c2
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 11
+================================================================================
+Question:
+How was the raw data organized into a consistent format?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p9::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p9::c1
+Similarity   : 0.5758
+Page         : 9
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p10::c1
+Similarity   : 0.5281
+Page         : 10
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p4::c2
+Similarity   : 0.5078
+Page         : 4
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p3::c1
+Similarity   : 0.5005
+Page         : 3
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p5::c2
+Similarity   : 0.4446
+Page         : 5
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p12::c1
+Similarity   : 0.4049
+Page         : 12
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p9::c1
+FAISS Score   : 0.5758
+Rerank Score  : 4.4574
+Page          : 9
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p4::c2
+FAISS Score   : 0.5078
+Rerank Score  : 0.7197
+Page          : 4
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p3::c1
+FAISS Score   : 0.5005
+Rerank Score  : 0.2923
+Page          : 3
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p10::c1
+FAISS Score   : 0.5281
+Rerank Score  : -2.1542
+Page          : 10
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p5::c2
+FAISS Score   : 0.4446
+Rerank Score  : -5.3259
+Page          : 5
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p12::c1
+FAISS Score   : 0.4049
+Rerank Score  : -7.9132
+Page          : 12
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p9::c1
+  Current tokens : 165
+  Remaining      : 985
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c2
+  Current tokens : 304
+  Remaining      : 846
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p3::c1
+  Current tokens : 585
+  Remaining      : 565
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p10::c1
+  Current tokens : 715
+  Remaining      : 435
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p5::c2
+  Current tokens : 853
+  Remaining      : 297
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p12::c1
+  Current tokens : 994
+  Remaining      : 156
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p9::c1 | Rerank=4.4574
+  2. PBI_midterm_report.pdf::p4::c2 | Rerank=0.7197
+  3. PBI_midterm_report.pdf::p3::c1 | Rerank=0.2923
+  4. PBI_midterm_report.pdf::p10::c1 | Rerank=-2.1542
+  5. PBI_midterm_report.pdf::p5::c2 | Rerank=-5.3259
+  6. PBI_midterm_report.pdf::p12::c1 | Rerank=-7.9132
+
+Selected chunk count : 6
+Total input tokens  : 994
+Input budget        : 1150
+Remaining tokens    : 156
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p9::c1
+  2. PBI_midterm_report.pdf::p4::c2
+  3. PBI_midterm_report.pdf::p3::c1
+  4. PBI_midterm_report.pdf::p10::c1
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 12
+================================================================================
+Question:
+What data cleaning activities were performed during the internship?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p10::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p12::c1
+Similarity   : 0.6348
+Page         : 12
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p7::c1
+Similarity   : 0.6133
+Page         : 7
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p9::c1
+Similarity   : 0.6018
+Page         : 9
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p5::c2
+Similarity   : 0.5458
+Page         : 5
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p6::c1
+Similarity   : 0.5329
+Page         : 6
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p10::c1
+Similarity   : 0.5105
+Page         : 10
+Relevant?    : True
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p12::c1
+FAISS Score   : 0.6348
+Rerank Score  : 5.6633
+Page          : 12
+Relevant?     : False
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p9::c1
+FAISS Score   : 0.6018
+Rerank Score  : 2.1724
+Page          : 9
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p5::c2
+FAISS Score   : 0.5458
+Rerank Score  : 0.1455
+Page          : 5
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p7::c1
+FAISS Score   : 0.6133
+Rerank Score  : -0.2805
+Page          : 7
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p10::c1
+FAISS Score   : 0.5105
+Rerank Score  : -0.8114
+Page          : 10
+Relevant?     : True
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p6::c1
+FAISS Score   : 0.5329
+Rerank Score  : -1.5570
+Page          : 6
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p12::c1
+  Current tokens : 168
+  Remaining      : 982
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p9::c1
+  Current tokens : 305
+  Remaining      : 845
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p5::c2
+  Current tokens : 443
+  Remaining      : 707
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p7::c1
+  Current tokens : 558
+  Remaining      : 592
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p10::c1
+  Current tokens : 688
+  Remaining      : 462
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p6::c1
+  Current tokens : 835
+  Remaining      : 315
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p12::c1 | Rerank=5.6633
+  2. PBI_midterm_report.pdf::p9::c1 | Rerank=2.1724
+  3. PBI_midterm_report.pdf::p5::c2 | Rerank=0.1455
+  4. PBI_midterm_report.pdf::p7::c1 | Rerank=-0.2805
+  5. PBI_midterm_report.pdf::p10::c1 | Rerank=-0.8114
+  6. PBI_midterm_report.pdf::p6::c1 | Rerank=-1.5570
+
+Selected chunk count : 6
+Total input tokens  : 835
+Input budget        : 1150
+Remaining tokens    : 315
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p12::c1
+  2. PBI_midterm_report.pdf::p9::c1
+  3. PBI_midterm_report.pdf::p5::c2
+  4. PBI_midterm_report.pdf::p7::c1
+
+Precision@4 : 0.0000 (0.00%)
+Recall@4    : 0.0000 (0.00%)
+Reciprocal Rank    : 0.0000
+
+
+================================================================================
+QUESTION 13
+================================================================================
+Question:
+How was useful information extracted from the datasets?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p10::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p10::c1
+Similarity   : 0.6230
+Page         : 10
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p9::c1
+Similarity   : 0.4952
+Page         : 9
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p4::c2
+Similarity   : 0.4590
+Page         : 4
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p12::c1
+Similarity   : 0.4455
+Page         : 12
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p7::c1
+Similarity   : 0.4166
+Page         : 7
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p5::c2
+Similarity   : 0.4087
+Page         : 5
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p10::c1
+FAISS Score   : 0.6230
+Rerank Score  : 7.9314
+Page          : 10
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p9::c1
+FAISS Score   : 0.4952
+Rerank Score  : 0.5180
+Page          : 9
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p4::c2
+FAISS Score   : 0.4590
+Rerank Score  : -0.5143
+Page          : 4
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p7::c1
+FAISS Score   : 0.4166
+Rerank Score  : -1.8879
+Page          : 7
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p12::c1
+FAISS Score   : 0.4455
+Rerank Score  : -4.0490
+Page          : 12
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p5::c2
+FAISS Score   : 0.4087
+Rerank Score  : -4.2153
+Page          : 5
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p10::c1
+  Current tokens : 156
+  Remaining      : 994
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p9::c1
+  Current tokens : 293
+  Remaining      : 857
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c2
+  Current tokens : 432
+  Remaining      : 718
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p7::c1
+  Current tokens : 547
+  Remaining      : 603
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p12::c1
+  Current tokens : 688
+  Remaining      : 462
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p5::c2
+  Current tokens : 826
+  Remaining      : 324
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p10::c1 | Rerank=7.9314
+  2. PBI_midterm_report.pdf::p9::c1 | Rerank=0.5180
+  3. PBI_midterm_report.pdf::p4::c2 | Rerank=-0.5143
+  4. PBI_midterm_report.pdf::p7::c1 | Rerank=-1.8879
+  5. PBI_midterm_report.pdf::p12::c1 | Rerank=-4.0490
+  6. PBI_midterm_report.pdf::p5::c2 | Rerank=-4.2153
+
+Selected chunk count : 6
+Total input tokens  : 826
+Input budget        : 1150
+Remaining tokens    : 324
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p10::c1
+  2. PBI_midterm_report.pdf::p9::c1
+  3. PBI_midterm_report.pdf::p4::c2
+  4. PBI_midterm_report.pdf::p7::c1
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 14
+================================================================================
+Question:
+How did Hemlata support pitch deck preparation?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p11::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p11::c1
+Similarity   : 0.4378
+Page         : 11
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p4::c2
+Similarity   : 0.3763
+Page         : 4
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p3::c1
+Similarity   : 0.2774
+Page         : 3
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p12::c1
+Similarity   : 0.2572
+Page         : 12
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p7::c1
+Similarity   : 0.2109
+Page         : 7
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p1::c1
+Similarity   : 0.1759
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p11::c1
+FAISS Score   : 0.4378
+Rerank Score  : 3.4785
+Page          : 11
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p12::c1
+FAISS Score   : 0.2572
+Rerank Score  : 1.4294
+Page          : 12
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p7::c1
+FAISS Score   : 0.2109
+Rerank Score  : 0.9620
+Page          : 7
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p4::c2
+FAISS Score   : 0.3763
+Rerank Score  : -1.0869
+Page          : 4
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p1::c1
+FAISS Score   : 0.1759
+Rerank Score  : -5.6243
+Page          : 1
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p3::c1
+FAISS Score   : 0.2774
+Rerank Score  : -6.5991
+Page          : 3
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p11::c1
+  Current tokens : 178
+  Remaining      : 972
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p12::c1
+  Current tokens : 319
+  Remaining      : 831
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p7::c1
+  Current tokens : 434
+  Remaining      : 716
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p4::c2
+  Current tokens : 573
+  Remaining      : 577
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p1::c1
+  Current tokens : 655
+  Remaining      : 495
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p3::c1
+  Current tokens : 936
+  Remaining      : 214
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p11::c1 | Rerank=3.4785
+  2. PBI_midterm_report.pdf::p12::c1 | Rerank=1.4294
+  3. PBI_midterm_report.pdf::p7::c1 | Rerank=0.9620
+  4. PBI_midterm_report.pdf::p4::c2 | Rerank=-1.0869
+  5. PBI_midterm_report.pdf::p1::c1 | Rerank=-5.6243
+  6. PBI_midterm_report.pdf::p3::c1 | Rerank=-6.5991
+
+Selected chunk count : 6
+Total input tokens  : 936
+Input budget        : 1150
+Remaining tokens    : 214
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p11::c1
+  2. PBI_midterm_report.pdf::p12::c1
+  3. PBI_midterm_report.pdf::p7::c1
+  4. PBI_midterm_report.pdf::p4::c2
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 15
+================================================================================
+Question:
+What improvements resulted from organizing and cleaning the datasets?
+
+Expected relevant chunks:
+  ✓ PBI_midterm_report.pdf::p10::c1
+  ✓ PBI_midterm_report.pdf::p12::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p10::c1
+Similarity   : 0.6940
+Page         : 10
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p7::c1
+Similarity   : 0.5030
+Page         : 7
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p12::c1
+Similarity   : 0.4948
+Page         : 12
+Relevant?    : True
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p9::c1
+Similarity   : 0.4209
+Page         : 9
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p3::c1
+Similarity   : 0.4052
+Page         : 3
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p5::c2
+Similarity   : 0.4036
+Page         : 5
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p10::c1
+FAISS Score   : 0.6940
+Rerank Score  : 5.3465
+Page          : 10
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p12::c1
+FAISS Score   : 0.4948
+Rerank Score  : 4.9415
+Page          : 12
+Relevant?     : True
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p7::c1
+FAISS Score   : 0.5030
+Rerank Score  : 1.5459
+Page          : 7
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p3::c1
+FAISS Score   : 0.4052
+Rerank Score  : 0.4804
+Page          : 3
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p9::c1
+FAISS Score   : 0.4209
+Rerank Score  : -2.7477
+Page          : 9
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p5::c2
+FAISS Score   : 0.4036
+Rerank Score  : -4.0985
+Page          : 5
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p10::c1
+  Current tokens : 157
+  Remaining      : 993
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p12::c1
+  Current tokens : 298
+  Remaining      : 852
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p7::c1
+  Current tokens : 413
+  Remaining      : 737
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p3::c1
+  Current tokens : 694
+  Remaining      : 456
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p9::c1
+  Current tokens : 831
+  Remaining      : 319
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p5::c2
+  Current tokens : 969
+  Remaining      : 181
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p10::c1 | Rerank=5.3465
+  2. PBI_midterm_report.pdf::p12::c1 | Rerank=4.9415
+  3. PBI_midterm_report.pdf::p7::c1 | Rerank=1.5459
+  4. PBI_midterm_report.pdf::p3::c1 | Rerank=0.4804
+  5. PBI_midterm_report.pdf::p9::c1 | Rerank=-2.7477
+  6. PBI_midterm_report.pdf::p5::c2 | Rerank=-4.0985
+
+Selected chunk count : 6
+Total input tokens  : 969
+Input budget        : 1150
+Remaining tokens    : 181
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p10::c1
+  2. PBI_midterm_report.pdf::p12::c1
+  3. PBI_midterm_report.pdf::p7::c1
+  4. PBI_midterm_report.pdf::p3::c1
+
+Precision@4 : 0.5000 (50.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 16
+================================================================================
+Question:
+How many KPI dashboards did Hemlata build during the internship?
+
+Expected relevant chunks:
+  None (negative / no-answer query)
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidates.
+
+FAISS Rank 1
+Chunk ID     : PBI_midterm_report.pdf::p1::c1
+Similarity   : 0.3595
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : PBI_midterm_report.pdf::p12::c1
+Similarity   : 0.3553
+Page         : 12
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : PBI_midterm_report.pdf::p6::c1
+Similarity   : 0.3454
+Page         : 6
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : PBI_midterm_report.pdf::p8::c1
+Similarity   : 0.3282
+Page         : 8
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : PBI_midterm_report.pdf::p5::c2
+Similarity   : 0.3201
+Page         : 5
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : PBI_midterm_report.pdf::p9::c1
+Similarity   : 0.3165
+Page         : 9
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring all FAISS candidates...
+
+Reranked candidate pool: 6
+
+Rerank 1
+Chunk ID      : PBI_midterm_report.pdf::p1::c1
+FAISS Score   : 0.3595
+Rerank Score  : -1.6770
+Page          : 1
+Relevant?     : False
+
+Rerank 2
+Chunk ID      : PBI_midterm_report.pdf::p12::c1
+FAISS Score   : 0.3553
+Rerank Score  : -6.6076
+Page          : 12
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : PBI_midterm_report.pdf::p9::c1
+FAISS Score   : 0.3165
+Rerank Score  : -7.0588
+Page          : 9
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : PBI_midterm_report.pdf::p8::c1
+FAISS Score   : 0.3282
+Rerank Score  : -8.0299
+Page          : 8
+Relevant?     : False
+
+Rerank 5
+Chunk ID      : PBI_midterm_report.pdf::p6::c1
+FAISS Score   : 0.3454
+Rerank Score  : -10.0023
+Page          : 6
+Relevant?     : False
+
+Rerank 6
+Chunk ID      : PBI_midterm_report.pdf::p5::c2
+FAISS Score   : 0.3201
+Rerank Score  : -10.1722
+Page          : 5
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: TOKEN-AWARE CONTEXT SELECTION
+--------------------------------------------------------------------------------
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p1::c1
+  Current tokens : 114
+  Remaining      : 1036
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p12::c1
+  Current tokens : 255
+  Remaining      : 895
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p9::c1
+  Current tokens : 392
+  Remaining      : 758
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p8::c1
+  Current tokens : 534
+  Remaining      : 616
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p6::c1
+  Current tokens : 681
+  Remaining      : 469
+
+[Token Budget] Selected chunk PBI_midterm_report.pdf::p5::c2
+  Current tokens : 819
+  Remaining      : 331
+
+Selected chunks for LLM:
+  1. PBI_midterm_report.pdf::p1::c1 | Rerank=-1.6770
+  2. PBI_midterm_report.pdf::p12::c1 | Rerank=-6.6076
+  3. PBI_midterm_report.pdf::p9::c1 | Rerank=-7.0588
+  4. PBI_midterm_report.pdf::p8::c1 | Rerank=-8.0299
+  5. PBI_midterm_report.pdf::p6::c1 | Rerank=-10.0023
+  6. PBI_midterm_report.pdf::p5::c2 | Rerank=-10.1722
+
+Selected chunk count : 6
+Total input tokens  : 819
+Input budget        : 1150
+Remaining tokens    : 331
+
+--------------------------------------------------------------------------------
+STAGE 4: RETRIEVAL METRICS @ 4
+--------------------------------------------------------------------------------
+
+Evaluation Top-4 IDs:
+  1. PBI_midterm_report.pdf::p1::c1
+  2. PBI_midterm_report.pdf::p12::c1
+  3. PBI_midterm_report.pdf::p9::c1
+  4. PBI_midterm_report.pdf::p8::c1
+
+Precision@4 : 0.0000 (0.00%)
+Recall@4    : 0.0000 (0.00%)
+Reciprocal Rank    : 0.0000
+
+
+================================================================================
+FINAL RESULTS - EXPERIMENT 4
+================================================================================
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 0.8333 (83.33%)
+MRR                : 0.8333 (83.33%)
+
+================================================================================
+EXPERIMENT COMPARISON
+================================================================================
+Experiment 2: P@4=25.00% | R@4=84.38% | MRR=64.58%
+Experiment 3: P@4=25.00% | R@4=84.38% | MRR=75.00%
+Experiment 4: P@4=25.00% | R@4=83.33% | MRR=83.33%
+
+Experiment 4 - Experiment 3:
+Precision change: +0.00 percentage points
+Recall change   : -1.05 percentage points
+MRR change      : +8.33 percentage points
+
+================================================================================
+INTERPRETATION
+================================================================================
+→ Precision remained unchanged.
+⚠ Recall decreased compared with Experiment 3.
+✓ MRR improved over Experiment 3.
+
+Token-budget observation:
+Average chunks selected for LLM: 6.00
+
+================================================================================
+DONE
+================================================================================

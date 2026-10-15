@@ -1,0 +1,1092 @@
+[
+  {
+    "id": 1,
+    "question": "What was Hemlata's role at VerbX?",
+    "gold_answer": "Hemlata's role at VerbX was Product and Revenue Intelligence Support.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p4::c1"
+    ],
+    "supporting_pages": [
+      1,
+      4
+    ],
+    "question_type": "multi_chunk_factual",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+        "page": 4,
+        "similarity": 0.25431984663009644,
+        "rerank_score": 0.6998152136802673
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+        "page": 5,
+        "similarity": 0.32681557536125183,
+        "rerank_score": -1.3626701831817627
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.3801172971725464,
+        "rerank_score": -5.075162887573242
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+        "page": 2,
+        "similarity": 0.3402019739151001,
+        "rerank_score": -7.383973121643066
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.15583427250385284,
+        "rerank_score": -11.386125564575195
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+        "page": 4,
+        "similarity": 0.18414562940597534,
+        "rerank_score": -11.442018508911133
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p5::c1",
+      "PBI_midterm_report.pdf::p8::c1"
+    ],
+    "selected_pages": [
+      1,
+      4,
+      5,
+      8
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 726,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "Hemlata worked at VerbX as a **Product & Revenue Intelligence Support** intern. [Page 4]"
+  },
+  {
+    "id": 2,
+    "question": "What was the main focus of Hemlata's internship at VerbX?",
+    "gold_answer": "The internship focused mainly on organizing operational data and preparing structured information that could assist internal decision making.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p4::c1"
+    ],
+    "supporting_pages": [
+      4
+    ],
+    "question_type": "factual",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.5219924449920654,
+        "rerank_score": 5.279480457305908
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+        "page": 4,
+        "similarity": 0.4140375852584839,
+        "rerank_score": 4.447880268096924
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+        "page": 5,
+        "similarity": 0.3280271589756012,
+        "rerank_score": -4.137018203735352
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+        "page": 6,
+        "similarity": 0.36093080043792725,
+        "rerank_score": -5.876554012298584
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.33296293020248413,
+        "rerank_score": -6.416683197021484
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+        "page": 2,
+        "similarity": 0.3758013844490051,
+        "rerank_score": -7.254033088684082
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p8::c1",
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p5::c1"
+    ],
+    "selected_pages": [
+      1,
+      8,
+      4,
+      5
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 730,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "The main focus of Hemlata’s internship at VerbX was **organizing operational data and preparing structured information to assist internal decision‑making** [Page 4]."
+  },
+  {
+    "id": 3,
+    "question": "What types of internal materials did Hemlata review at the beginning of the internship?",
+    "gold_answer": "She reviewed internal files, spreadsheets, and documents to understand the product concept, business model, and operational workflows.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p4::c1"
+    ],
+    "supporting_pages": [
+      4
+    ],
+    "question_type": "factual",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.42124277353286743,
+        "rerank_score": 0.7506240606307983
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+        "page": 6,
+        "similarity": 0.3913254737854004,
+        "rerank_score": -3.937389373779297
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+        "page": 5,
+        "similarity": 0.3649390935897827,
+        "rerank_score": -5.336348533630371
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.3611932694911957,
+        "rerank_score": -5.961875915527344
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+        "page": 9,
+        "similarity": 0.36321380734443665,
+        "rerank_score": -6.455805778503418
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+        "page": 7,
+        "similarity": 0.3710942566394806,
+        "rerank_score": -7.375776767730713
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p8::c1",
+      "PBI_midterm_report.pdf::p6::c1",
+      "PBI_midterm_report.pdf::p5::c2"
+    ],
+    "selected_pages": [
+      1,
+      8,
+      6,
+      5
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 713,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "- Internal files  \n- Spreadsheets  \n- Informational documents  \n\nThese were the types of internal materials Hemlata reviewed during the initial learning phase of her internship. [Page 8]"
+  },
+  {
+    "id": 4,
+    "question": "What kind of communication platform is VerbX developing?",
+    "gold_answer": "VerbX is developing a multilingual communication platform.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p5::c1"
+    ],
+    "supporting_pages": [
+      5
+    ],
+    "question_type": "factual",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+        "page": 5,
+        "similarity": 0.6542850732803345,
+        "rerank_score": 4.709207534790039
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+        "page": 4,
+        "similarity": 0.46603456139564514,
+        "rerank_score": -0.6865777373313904
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.5556627511978149,
+        "rerank_score": -1.2462340593338013
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+        "page": 2,
+        "similarity": 0.5075528025627136,
+        "rerank_score": -4.453647136688232
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+        "page": 5,
+        "similarity": 0.24639633297920227,
+        "rerank_score": -11.374499320983887
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p11::c1",
+        "page": 11,
+        "similarity": 0.2793681025505066,
+        "rerank_score": -11.407584190368652
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p5::c1",
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p8::c1"
+    ],
+    "selected_pages": [
+      1,
+      5,
+      4,
+      8
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 725,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "VerbX is developing a **multilingual communication platform** designed for use across sectors such as banking, travel, healthcare, and enterprise environments. It focuses on enabling communication between people who speak different languages by providing structured communication tools. [Page 5]"
+  },
+  {
+    "id": 5,
+    "question": "Which sectors is the VerbX platform intended to serve?",
+    "gold_answer": "The platform is intended to serve banking, travel, healthcare, and enterprise environments.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p5::c1"
+    ],
+    "supporting_pages": [
+      5
+    ],
+    "question_type": "list",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+        "page": 5,
+        "similarity": 0.4934033155441284,
+        "rerank_score": 5.8209943771362305
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+        "page": 4,
+        "similarity": 0.3326980471611023,
+        "rerank_score": -3.054471254348755
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+        "page": 2,
+        "similarity": 0.44178715348243713,
+        "rerank_score": -5.797159671783447
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.4205918312072754,
+        "rerank_score": -6.083335876464844
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p11::c1",
+        "page": 11,
+        "similarity": 0.2661786675453186,
+        "rerank_score": -11.408796310424805
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+        "page": 4,
+        "similarity": 0.23095080256462097,
+        "rerank_score": -11.484515190124512
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p5::c1",
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p2::c1"
+    ],
+    "selected_pages": [
+      1,
+      5,
+      4,
+      2
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 627,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "The VerbX platform is intended to serve the following sectors:\n\n- Banking  \n- Travel  \n- Healthcare  \n- Enterprise environments  \n\n[Page 5]"
+  },
+  {
+    "id": 6,
+    "question": "What were the main objectives of the internship?",
+    "gold_answer": "The main objectives were understanding the system, organizing raw data, improving data quality, and supporting business documentation.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p6::c1",
+      "PBI_midterm_report.pdf::p7::c1"
+    ],
+    "supporting_pages": [
+      6,
+      7
+    ],
+    "question_type": "multi_chunk_list",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+        "page": 6,
+        "similarity": 0.732622504234314,
+        "rerank_score": 8.527329444885254
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+        "page": 7,
+        "similarity": 0.5344615578651428,
+        "rerank_score": 7.5995635986328125
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.4752802848815918,
+        "rerank_score": 3.303719997406006
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+        "page": 9,
+        "similarity": 0.4754065275192261,
+        "rerank_score": 2.6462645530700684
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+        "page": 4,
+        "similarity": 0.48545530438423157,
+        "rerank_score": 2.5510616302490234
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.47596222162246704,
+        "rerank_score": 2.113393783569336
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p6::c1",
+      "PBI_midterm_report.pdf::p7::c1",
+      "PBI_midterm_report.pdf::p12::c1"
+    ],
+    "selected_pages": [
+      1,
+      6,
+      7,
+      12
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 681,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "- **Understanding the System** – Familiarize with the organization’s internal structure, product concept, and operational workflow. [Page 6]  \n- **Organizing Raw Data** – Convert disparate datasets into structured Excel sheets for easy access and management. [Page 6]  \n- **Improving Data Quality** – Identify duplicate records, correct inconsistent formatting, and organize information into clear categories. [Page 6]  \n- **Supporting Business Documentation** – Prepare and organize information for business documents such as pitch decks. [Page 6]"
+  },
+  {
+    "id": 7,
+    "question": "What did improving data quality involve?",
+    "gold_answer": "It involved identifying duplicate records, correcting inconsistent formatting, and organizing information into clear categories.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p7::c1"
+    ],
+    "supporting_pages": [
+      7
+    ],
+    "question_type": "factual",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+        "page": 7,
+        "similarity": 0.5107723474502563,
+        "rerank_score": 6.336627006530762
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+        "page": 10,
+        "similarity": 0.542245626449585,
+        "rerank_score": 4.9257378578186035
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p3::c1",
+        "page": 3,
+        "similarity": 0.3844039738178253,
+        "rerank_score": 1.7824127674102783
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.3382713496685028,
+        "rerank_score": -4.140301704406738
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c1",
+        "page": 5,
+        "similarity": 0.3423847556114197,
+        "rerank_score": -7.0205888748168945
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+        "page": 9,
+        "similarity": 0.35621514916419983,
+        "rerank_score": -8.04201602935791
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p7::c1",
+      "PBI_midterm_report.pdf::p10::c1",
+      "PBI_midterm_report.pdf::p3::c1"
+    ],
+    "selected_pages": [
+      1,
+      7,
+      10,
+      3
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 802,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "- Identifying duplicate records and removing duplicate entries.  \n- Correcting inconsistent formatting and formatting inconsistencies.  \n- Organizing the information into clear categories.  \n\n[Page 7], [Page 10]"
+  },
+  {
+    "id": 8,
+    "question": "What was the primary focus during the first week?",
+    "gold_answer": "The primary focus was understanding the internal structure and documentation of VerbX.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p8::c1"
+    ],
+    "supporting_pages": [
+      8
+    ],
+    "question_type": "factual",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.24302048981189728,
+        "rerank_score": 7.134336471557617
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+        "page": 9,
+        "similarity": 0.18993836641311646,
+        "rerank_score": -10.548025131225586
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+        "page": 6,
+        "similarity": 0.20234641432762146,
+        "rerank_score": -11.15517807006836
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+        "page": 7,
+        "similarity": 0.18025439977645874,
+        "rerank_score": -11.267655372619629
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.18028555810451508,
+        "rerank_score": -11.350470542907715
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p2::c1",
+        "page": 2,
+        "similarity": 0.1308242529630661,
+        "rerank_score": -11.396471977233887
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p8::c1",
+      "PBI_midterm_report.pdf::p9::c1",
+      "PBI_midterm_report.pdf::p6::c1"
+    ],
+    "selected_pages": [
+      1,
+      8,
+      9,
+      6
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 705,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "During the first week, the primary focus was on **understanding the internal structure and documentation of VerbX**—reviewing internal files, spreadsheets, and informational documents to grasp the system being developed. [Page 8]"
+  },
+  {
+    "id": 9,
+    "question": "What did the initial learning phase help Hemlata understand?",
+    "gold_answer": "It helped her understand the product idea and the types of operational data used within the organization.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p8::c1"
+    ],
+    "supporting_pages": [
+      8
+    ],
+    "question_type": "factual",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.4199092984199524,
+        "rerank_score": 2.4392454624176025
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+        "page": 4,
+        "similarity": 0.19533443450927734,
+        "rerank_score": -0.9303234815597534
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+        "page": 9,
+        "similarity": 0.22782252728939056,
+        "rerank_score": -7.990561485290527
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+        "page": 6,
+        "similarity": 0.22254011034965515,
+        "rerank_score": -11.272573471069336
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+        "page": 7,
+        "similarity": 0.2088092565536499,
+        "rerank_score": -11.379427909851074
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+        "page": 4,
+        "similarity": 0.1928378939628601,
+        "rerank_score": -11.454447746276855
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p8::c1",
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p9::c1"
+    ],
+    "selected_pages": [
+      1,
+      8,
+      4,
+      9
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 713,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "The initial learning phase helped Hemlata understand:\n\n- The internal structure and documentation of VerbX, including the system being developed. **[Page 8]**\n- The product idea and the types of operational data used within the organization. **[Page 8]**\n- The product concept, business model, and operational workflows of the company. **[Page 4]**\n- How different types of data are used for business planning and communication. **[Page 4]**"
+  },
+  {
+    "id": 10,
+    "question": "Why was the internship data converted into structured Excel sheets?",
+    "gold_answer": "Some information was not directly suitable for analysis, so it was converted into structured Excel sheets for consistent storage and management.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p9::c1"
+    ],
+    "supporting_pages": [
+      9
+    ],
+    "question_type": "why",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+        "page": 9,
+        "similarity": 0.836557924747467,
+        "rerank_score": 8.375871658325195
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+        "page": 5,
+        "similarity": 0.6998748779296875,
+        "rerank_score": 6.319802284240723
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.6901041269302368,
+        "rerank_score": 5.930166244506836
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+        "page": 4,
+        "similarity": 0.629966139793396,
+        "rerank_score": 5.403580188751221
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+        "page": 6,
+        "similarity": 0.6674437522888184,
+        "rerank_score": 4.645474433898926
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+        "page": 7,
+        "similarity": 0.6037322878837585,
+        "rerank_score": -0.17364424467086792
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p9::c1",
+      "PBI_midterm_report.pdf::p5::c2",
+      "PBI_midterm_report.pdf::p12::c1"
+    ],
+    "selected_pages": [
+      1,
+      9,
+      5,
+      12
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 696,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "The internship data was converted into structured Excel sheets because the original information existed in formats that were not directly suitable for analysis. Converting it allowed the data to be stored in a consistent, organized format, which is essential for planning, communication, internal coordination, operational tracking, analysis, and documentation, and it improved the reliability of the stored information.  \n\n[Page 9], [Page 5], [Page 12]"
+  },
+  {
+    "id": 11,
+    "question": "How was the raw data organized into a consistent format?",
+    "gold_answer": "Useful information was identified and arranged into rows and columns in structured Excel sheets.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p9::c1"
+    ],
+    "supporting_pages": [
+      9
+    ],
+    "question_type": "how",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+        "page": 9,
+        "similarity": 0.5758404731750488,
+        "rerank_score": 4.457439422607422
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+        "page": 4,
+        "similarity": 0.5077623128890991,
+        "rerank_score": 0.7197076678276062
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p3::c1",
+        "page": 3,
+        "similarity": 0.5004923939704895,
+        "rerank_score": 0.29227548837661743
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+        "page": 10,
+        "similarity": 0.5281322002410889,
+        "rerank_score": -2.1541624069213867
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+        "page": 5,
+        "similarity": 0.44459474086761475,
+        "rerank_score": -5.325859069824219
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.4048656225204468,
+        "rerank_score": -7.913236141204834
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p9::c1",
+      "PBI_midterm_report.pdf::p4::c2",
+      "PBI_midterm_report.pdf::p3::c1"
+    ],
+    "selected_pages": [
+      1,
+      9,
+      4,
+      3
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 837,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "- Identified useful information within the raw data and arranged it into rows and columns in Excel sheets so it could be stored in a consistent format **[Page 9]**.  \n- Cleaned, categorized, and transformed mixed or unorganized data into structured spreadsheets for further analysis **[Page 4]**."
+  },
+  {
+    "id": 12,
+    "question": "What data cleaning activities were performed?",
+    "gold_answer": "Duplicate entries were removed and formatting inconsistencies were corrected.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p10::c1"
+    ],
+    "supporting_pages": [
+      10
+    ],
+    "question_type": "factual",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+        "page": 10,
+        "similarity": 0.598354160785675,
+        "rerank_score": 4.829142093658447
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.4276524782180786,
+        "rerank_score": -0.8736535906791687
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p3::c1",
+        "page": 3,
+        "similarity": 0.43403685092926025,
+        "rerank_score": -3.9477343559265137
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+        "page": 7,
+        "similarity": 0.4231575131416321,
+        "rerank_score": -9.790231704711914
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+        "page": 9,
+        "similarity": 0.4106585681438446,
+        "rerank_score": -10.099278450012207
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+        "page": 5,
+        "similarity": 0.3833680748939514,
+        "rerank_score": -10.11429500579834
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p10::c1",
+      "PBI_midterm_report.pdf::p12::c1",
+      "PBI_midterm_report.pdf::p3::c1"
+    ],
+    "selected_pages": [
+      1,
+      10,
+      12,
+      3
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 828,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "- Removing duplicate entries  \n- Correcting formatting inconsistencies  \n\nThese data cleaning activities were performed to improve dataset quality and reliability. [Page 10]"
+  },
+  {
+    "id": 13,
+    "question": "How was useful information extracted from the datasets?",
+    "gold_answer": "Relevant fields were identified and arranged in a way useful for internal operational purposes.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p10::c1"
+    ],
+    "supporting_pages": [
+      10
+    ],
+    "question_type": "how",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+        "page": 10,
+        "similarity": 0.6229628324508667,
+        "rerank_score": 7.931405544281006
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+        "page": 9,
+        "similarity": 0.4952106177806854,
+        "rerank_score": 0.5179704427719116
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+        "page": 4,
+        "similarity": 0.45896053314208984,
+        "rerank_score": -0.5142747163772583
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+        "page": 7,
+        "similarity": 0.41663122177124023,
+        "rerank_score": -1.887863039970398
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.445540189743042,
+        "rerank_score": -4.049038410186768
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+        "page": 5,
+        "similarity": 0.4087255001068115,
+        "rerank_score": -4.2152814865112305
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p10::c1",
+      "PBI_midterm_report.pdf::p9::c1",
+      "PBI_midterm_report.pdf::p4::c2"
+    ],
+    "selected_pages": [
+      1,
+      10,
+      9,
+      4
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 684,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "- The datasets were first cleaned (duplicate entries removed, formatting inconsistencies corrected) to make them reliable [Page 10].  \n- After cleaning, the data was organized into structured Excel sheets, with relevant fields identified and arranged in rows and columns [Page 9, Page 4].  \n- Meaningful information was then extracted by selecting those relevant fields and presenting them in a format useful for internal operational purposes [Page 10].  \n\nThus, useful information was extracted by cleaning, structuring, and then identifying and arranging the relevant fields into usable spreadsheets."
+  },
+  {
+    "id": 14,
+    "question": "How did Hemlata support pitch deck preparation?",
+    "gold_answer": "She organized relevant information into a clear and logical structure so it could be used in presentation slides.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p11::c1"
+    ],
+    "supporting_pages": [
+      11
+    ],
+    "question_type": "how",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p11::c1",
+        "page": 11,
+        "similarity": 0.4377592206001282,
+        "rerank_score": 3.4784622192382812
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.2572050392627716,
+        "rerank_score": 1.4294452667236328
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+        "page": 7,
+        "similarity": 0.2109026163816452,
+        "rerank_score": 0.9620361328125
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c2",
+        "page": 4,
+        "similarity": 0.37634584307670593,
+        "rerank_score": -1.0869454145431519
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p1::c1",
+        "page": 1,
+        "similarity": 0.17590193450450897,
+        "rerank_score": -5.624300003051758
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p3::c1",
+        "page": 3,
+        "similarity": 0.27736350893974304,
+        "rerank_score": -6.59909725189209
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p11::c1",
+      "PBI_midterm_report.pdf::p12::c1",
+      "PBI_midterm_report.pdf::p7::c1"
+    ],
+    "selected_pages": [
+      1,
+      11,
+      12,
+      7
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 686,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "- Organized relevant business information so it could be used in presentation slides, structuring the content clearly for easy understanding. [Page 11]  \n- Assisted in preparing pitch deck content by arranging important business data in a logical, structured format. [Page 12]  \n- Focused on making the information easy to comprehend for stakeholders, supporting the overall pitch deck preparation process. [Page 11]"
+  },
+  {
+    "id": 15,
+    "question": "What improvements resulted from organizing and cleaning the datasets?",
+    "gold_answer": "The datasets became easier to manage, information was more accessible for operational tasks, and cleaning and organization improved data reliability.",
+    "supporting_chunks": [
+      "PBI_midterm_report.pdf::p10::c1",
+      "PBI_midterm_report.pdf::p12::c1"
+    ],
+    "supporting_pages": [
+      10,
+      12
+    ],
+    "question_type": "multi_chunk_synthesis",
+    "expected_abstention": false,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p10::c1",
+        "page": 10,
+        "similarity": 0.6939772367477417,
+        "rerank_score": 5.346492767333984
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.49481672048568726,
+        "rerank_score": 4.941500663757324
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p7::c1",
+        "page": 7,
+        "similarity": 0.5029939413070679,
+        "rerank_score": 1.5458886623382568
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p3::c1",
+        "page": 3,
+        "similarity": 0.40520793199539185,
+        "rerank_score": 0.48039504885673523
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+        "page": 9,
+        "similarity": 0.4209422469139099,
+        "rerank_score": -2.747710704803467
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p5::c2",
+        "page": 5,
+        "similarity": 0.40360647439956665,
+        "rerank_score": -4.098477840423584
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p10::c1",
+      "PBI_midterm_report.pdf::p12::c1",
+      "PBI_midterm_report.pdf::p7::c1"
+    ],
+    "selected_pages": [
+      1,
+      10,
+      12,
+      7
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 665,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "- Datasets became **more reliable** and **easier to use** after duplicate entries were removed and formatting inconsistencies were corrected. [Page 10]  \n- Organized datasets were placed into **structured Excel sheets**, making them **easier to manage** and providing **clearer access** to information needed for operational tasks. [Page 12]  \n- Data cleaning and organization **improved the reliability of stored information**. [Page 12]  \n- Information was sorted into **clear categories**, enhancing overall data quality. [Page 7]  \n- The cleaned, organized data also **supported the preparation of pitch‑deck content**, helping to structure important business information for presentations. [Page 12]"
+  },
+  {
+    "id": 16,
+    "question": "What was Hemlata's salary during the internship?",
+    "gold_answer": "The document does not provide Hemlata's salary.",
+    "supporting_chunks": [],
+    "supporting_pages": [],
+    "question_type": "negative",
+    "expected_abstention": true,
+    "reranked_chunks": [
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p1::c1",
+        "page": 1,
+        "similarity": 0.2803134024143219,
+        "rerank_score": -0.11154390871524811
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p12::c1",
+        "page": 12,
+        "similarity": 0.24502556025981903,
+        "rerank_score": -6.276423454284668
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p4::c1",
+        "page": 4,
+        "similarity": 0.27111414074897766,
+        "rerank_score": -6.693841457366943
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p9::c1",
+        "page": 9,
+        "similarity": 0.2708800435066223,
+        "rerank_score": -7.720259666442871
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p8::c1",
+        "page": 8,
+        "similarity": 0.2576427757740021,
+        "rerank_score": -7.889023780822754
+      },
+      {
+        "chunk_id": "PBI_midterm_report.pdf::p6::c1",
+        "page": 6,
+        "similarity": 0.3229601979255676,
+        "rerank_score": -9.73657512664795
+      }
+    ],
+    "selected_chunks": [
+      "PBI_midterm_report.pdf::p1::c1",
+      "PBI_midterm_report.pdf::p12::c1",
+      "PBI_midterm_report.pdf::p4::c1",
+      "PBI_midterm_report.pdf::p9::c1"
+    ],
+    "selected_pages": [
+      1,
+      12,
+      4,
+      9
+    ],
+    "has_header": true,
+    "evidence_chunks": 3,
+    "prompt_tokens": 711,
+    "model_used": "cohere/north-mini-code:free",
+    "answer": "I could not find sufficient information in the provided document."
+  }
+]

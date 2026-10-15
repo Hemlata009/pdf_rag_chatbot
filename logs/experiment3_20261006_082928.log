@@ -1,0 +1,1703 @@
+
+================================================================================
+        RAG EVALUATION - EXPERIMENT 3
+        FAISS + CROSS-ENCODER RERANKING
+================================================================================
+
+Configuration
+--------------------------------------------------------------------------------
+PDF Path       : Hemlata_Resume_Data.pdf
+Chunk Size     : 700
+Chunk Overlap  : 100
+Retrieval K    : 10
+Final K        : 4
+
+================================================================================
+STEP 1: LOAD EMBEDDING MODEL
+================================================================================
+Embedding model loaded successfully.
+
+================================================================================
+STEP 2: LOAD CROSS-ENCODER RERANKER
+================================================================================
+CrossEncoder reranker loaded successfully.
+
+================================================================================
+STEP 3: EXTRACT PDF
+================================================================================
+Pages extracted: 1
+Page 1 | Characters: 3410
+
+================================================================================
+STEP 4: CREATE CHUNKS
+================================================================================
+Total chunks created: 6
+
+--------------------------------------------------------------------------------
+Chunk ID    : Hemlata_Resume_Data.pdf::p1::c1
+Page        : 1
+Characters  : 599
+Text preview:
+Hemlata 952-829-3761 | hemlata09h@gmail.com | Mathura, UP | linkedin.com/in/hemlata009 | github.com/hemlata009 | Portfolio Education Indian Institute of Information Technology, Design and Manufacturing Nov 2022 – Jun 2026 Bachelor of Technology Jabalpur, India Technical Skills Languages & Data Proce
+
+--------------------------------------------------------------------------------
+Chunk ID    : Hemlata_Resume_Data.pdf::p1::c2
+Page        : 1
+Characters  : 616
+Text preview:
+ML & AI: scikit-learn, LightGBM, Feature Engineering, Model Evaluation, LLMs, RAG, Embeddings, Vector Databases, AI Coding Assistants (Claude Code, Cursor, Copilot) Analytics & Tools: Power BI, Advanced Excel (Power Query, Pivot Tables, XLOOKUP), KPI Reporting, EDA, Streamlit, Matplotlib, Jira, Agil
+
+--------------------------------------------------------------------------------
+Chunk ID    : Hemlata_Resume_Data.pdf::p1::c3
+Page        : 1
+Characters  : 681
+Text preview:
+Design idempotent loads with embedded data validation and quality checks, and tune SQL using query plans to avoid full table scans and cut query cost. Apply ML/AI in Python on pipeline outputs for predictive insights, and use AI coding assistants to speed up development while reviewing and testing g
+
+--------------------------------------------------------------------------------
+Chunk ID    : Hemlata_Resume_Data.pdf::p1::c4
+Page        : 1
+Characters  : 659
+Text preview:
+Play Store App Analytics | Python, PySpark, SQL [Source Code] Processed 250,000+ app records with PySpark, applying cleaning, transformation, validation, and outlier treatment to produce a reliable, analysis-ready dataset. Queried and aggregated the processed data with SQL and Python to evaluate pri
+
+--------------------------------------------------------------------------------
+Chunk ID    : Hemlata_Resume_Data.pdf::p1::c5
+Page        : 1
+Characters  : 617
+Text preview:
+Tuned a LightGBM model to R² > 0.85 and MAE < 5 min; deployed a Streamlit app for real-time predictions and factor- level insights. Bank Customer Churn & Retention Analytics | Python, Power BI [Source Code] Analyzed 10,000+ customer records with Python and statistical testing to identify churn drive
+
+--------------------------------------------------------------------------------
+Chunk ID    : Hemlata_Resume_Data.pdf::p1::c6
+Page        : 1
+Characters  : 233
+Text preview:
+Inside Investigation – BMC Club: Secured 3rd place among 50+ teams through analytical reasoning and data interpretation. Finalist – B-Plan, IIT Kharagpur (2024): Presented a market-validated business idea backed by ﬁnancial analysis.
+
+================================================================================
+STEP 5: BUILD FAISS INDEX
+================================================================================
+FAISS index built successfully.
+Number of vectors: 6
+
+================================================================================
+STEP 6: RUN EVALUATION
+================================================================================
+Pipeline: Query -> FAISS Top-10 -> CrossEncoder -> Final Top-4
+
+
+================================================================================
+QUESTION 1
+================================================================================
+Question:
+Where did Hemlata complete her B.Tech?
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.3530
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.1934
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.1539
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.1030
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.0934
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : -0.0256
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c1
+FAISS Score   : 0.3530
+Rerank Score  : -1.2224
+Page          : 1
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c6
+FAISS Score   : 0.1934
+Rerank Score  : -11.1712
+Page          : 1
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c4
+FAISS Score   : -0.0256
+Rerank Score  : -11.4032
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c2
+FAISS Score   : 0.1539
+Rerank Score  : -11.4177
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c1
+  2. Hemlata_Resume_Data.pdf::p1::c6
+  3. Hemlata_Resume_Data.pdf::p1::c4
+  4. Hemlata_Resume_Data.pdf::p1::c2
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 2
+================================================================================
+Question:
+What programming and data processing languages does Hemlata know?
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.5463
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.3690
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.2439
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : 0.2123
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.1862
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.0837
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c1
+FAISS Score   : 0.5463
+Rerank Score  : 4.9490
+Page          : 1
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c4
+FAISS Score   : 0.2123
+Rerank Score  : -9.3334
+Page          : 1
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c2
+FAISS Score   : 0.3690
+Rerank Score  : -9.9221
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c3
+FAISS Score   : 0.2439
+Rerank Score  : -10.8473
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c1
+  2. Hemlata_Resume_Data.pdf::p1::c4
+  3. Hemlata_Resume_Data.pdf::p1::c2
+  4. Hemlata_Resume_Data.pdf::p1::c3
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 3
+================================================================================
+Question:
+What cloud technologies does Hemlata know?
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c1
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.5451
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.3476
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.2558
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.2173
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : 0.1975
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.1941
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c1
+FAISS Score   : 0.5451
+Rerank Score  : 3.0285
+Page          : 1
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c2
+FAISS Score   : 0.3476
+Rerank Score  : -10.6628
+Page          : 1
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c4
+FAISS Score   : 0.1975
+Rerank Score  : -11.3568
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c5
+FAISS Score   : 0.2173
+Rerank Score  : -11.3848
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c1
+  2. Hemlata_Resume_Data.pdf::p1::c2
+  3. Hemlata_Resume_Data.pdf::p1::c4
+  4. Hemlata_Resume_Data.pdf::p1::c5
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 4
+================================================================================
+Question:
+What does Hemlata do at Care.fi?
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c2
+  ✓ Hemlata_Resume_Data.pdf::p1::c3
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.3179
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.1383
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.1007
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.0938
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.0561
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : 0.0389
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c1
+FAISS Score   : 0.3179
+Rerank Score  : -4.2718
+Page          : 1
+Relevant?     : False
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c2
+FAISS Score   : 0.1383
+Rerank Score  : -11.3094
+Page          : 1
+Relevant?     : True
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c4
+FAISS Score   : 0.0389
+Rerank Score  : -11.4603
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c3
+FAISS Score   : 0.0561
+Rerank Score  : -11.4926
+Page          : 1
+Relevant?     : True
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c1
+  2. Hemlata_Resume_Data.pdf::p1::c2
+  3. Hemlata_Resume_Data.pdf::p1::c4
+  4. Hemlata_Resume_Data.pdf::p1::c3
+
+Precision@4 : 0.5000 (50.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 0.5000
+
+
+================================================================================
+QUESTION 5
+================================================================================
+Question:
+What technologies are used in Hemlata's Care.fi ETL pipelines?
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c2
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.4444
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.3935
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.2544
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.1583
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : 0.1565
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.1269
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c1
+FAISS Score   : 0.4444
+Rerank Score  : 2.2962
+Page          : 1
+Relevant?     : False
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c2
+FAISS Score   : 0.3935
+Rerank Score  : -0.5643
+Page          : 1
+Relevant?     : True
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c3
+FAISS Score   : 0.2544
+Rerank Score  : -10.8931
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c4
+FAISS Score   : 0.1565
+Rerank Score  : -11.4024
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c1
+  2. Hemlata_Resume_Data.pdf::p1::c2
+  3. Hemlata_Resume_Data.pdf::p1::c3
+  4. Hemlata_Resume_Data.pdf::p1::c4
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 0.5000
+
+
+================================================================================
+QUESTION 6
+================================================================================
+Question:
+What was Hemlata's role at IVISH AI Quantum?
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c3
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.2682
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.1832
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.1272
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.0907
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : -0.0143
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : -0.1067
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c3
+FAISS Score   : 0.1832
+Rerank Score  : -0.3043
+Page          : 1
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c1
+FAISS Score   : 0.2682
+Rerank Score  : -5.9620
+Page          : 1
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c2
+FAISS Score   : 0.1272
+Rerank Score  : -10.9909
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c6
+FAISS Score   : 0.0907
+Rerank Score  : -11.3926
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c3
+  2. Hemlata_Resume_Data.pdf::p1::c1
+  3. Hemlata_Resume_Data.pdf::p1::c2
+  4. Hemlata_Resume_Data.pdf::p1::c6
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 7
+================================================================================
+Question:
+How many records did Hemlata clean and validate at IVISH AI?
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c3
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.3103
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.2814
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.1925
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.1774
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.0606
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : 0.0083
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c3
+FAISS Score   : 0.2814
+Rerank Score  : 2.9749
+Page          : 1
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c1
+FAISS Score   : 0.3103
+Rerank Score  : -7.5117
+Page          : 1
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c4
+FAISS Score   : 0.0083
+Rerank Score  : -9.2990
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c5
+FAISS Score   : 0.0606
+Rerank Score  : -10.6583
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c3
+  2. Hemlata_Resume_Data.pdf::p1::c1
+  3. Hemlata_Resume_Data.pdf::p1::c4
+  4. Hemlata_Resume_Data.pdf::p1::c5
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 8
+================================================================================
+Question:
+How many KPI dashboards did Hemlata build?
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c3
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.3611
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.2899
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.2006
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.1930
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.1917
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : 0.1072
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c3
+FAISS Score   : 0.2899
+Rerank Score  : -2.3245
+Page          : 1
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c1
+FAISS Score   : 0.3611
+Rerank Score  : -4.4937
+Page          : 1
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c5
+FAISS Score   : 0.1917
+Rerank Score  : -4.6690
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c2
+FAISS Score   : 0.1930
+Rerank Score  : -9.7686
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c3
+  2. Hemlata_Resume_Data.pdf::p1::c1
+  3. Hemlata_Resume_Data.pdf::p1::c5
+  4. Hemlata_Resume_Data.pdf::p1::c2
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 9
+================================================================================
+Question:
+How many app records were processed in the Play Store App Analytics project?
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c4
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : 0.4868
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.3263
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.2751
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.2076
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.2037
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.1441
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c4
+FAISS Score   : 0.4868
+Rerank Score  : 7.8828
+Page          : 1
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c5
+FAISS Score   : 0.3263
+Rerank Score  : -3.8793
+Page          : 1
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c3
+FAISS Score   : 0.2751
+Rerank Score  : -9.2004
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c2
+FAISS Score   : 0.2037
+Rerank Score  : -11.2209
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c4
+  2. Hemlata_Resume_Data.pdf::p1::c5
+  3. Hemlata_Resume_Data.pdf::p1::c3
+  4. Hemlata_Resume_Data.pdf::p1::c2
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 10
+================================================================================
+Question:
+What did Hemlata analyze in the Play Store App Analytics project?
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c4
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.3882
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : 0.3816
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.3552
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.3410
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.2805
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.2440
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c4
+FAISS Score   : 0.3816
+Rerank Score  : 2.3224
+Page          : 1
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c1
+FAISS Score   : 0.3410
+Rerank Score  : -6.3227
+Page          : 1
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c5
+FAISS Score   : 0.3882
+Rerank Score  : -7.1977
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c6
+FAISS Score   : 0.3552
+Rerank Score  : -9.6607
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c4
+  2. Hemlata_Resume_Data.pdf::p1::c1
+  3. Hemlata_Resume_Data.pdf::p1::c5
+  4. Hemlata_Resume_Data.pdf::p1::c6
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 11
+================================================================================
+Question:
+What was the performance of the LightGBM model in the Smart Logistics project?
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c5
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.4571
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : 0.3858
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.3060
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.2885
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.2761
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.2373
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c4
+FAISS Score   : 0.3858
+Rerank Score  : 0.6123
+Page          : 1
+Relevant?     : False
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c5
+FAISS Score   : 0.4571
+Rerank Score  : -1.8110
+Page          : 1
+Relevant?     : True
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c2
+FAISS Score   : 0.2885
+Rerank Score  : -6.2078
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c3
+FAISS Score   : 0.2761
+Rerank Score  : -11.3258
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c4
+  2. Hemlata_Resume_Data.pdf::p1::c5
+  3. Hemlata_Resume_Data.pdf::p1::c2
+  4. Hemlata_Resume_Data.pdf::p1::c3
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 0.5000
+
+
+================================================================================
+QUESTION 12
+================================================================================
+Question:
+What features were used in the Smart Logistics Delivery Prediction System?
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c4
+  ✓ Hemlata_Resume_Data.pdf::p1::c5
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : 0.5593
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.3245
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.2993
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.2966
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.2798
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.1664
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c4
+FAISS Score   : 0.5593
+Rerank Score  : 5.1575
+Page          : 1
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c5
+FAISS Score   : 0.2993
+Rerank Score  : -10.5473
+Page          : 1
+Relevant?     : True
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c2
+FAISS Score   : 0.2966
+Rerank Score  : -10.6062
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c3
+FAISS Score   : 0.2798
+Rerank Score  : -10.6834
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c4
+  2. Hemlata_Resume_Data.pdf::p1::c5
+  3. Hemlata_Resume_Data.pdf::p1::c2
+  4. Hemlata_Resume_Data.pdf::p1::c3
+
+Precision@4 : 0.5000 (50.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 13
+================================================================================
+Question:
+How many customer records were analyzed in the Bank Customer Churn project?
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c5
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.5680
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : 0.3718
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.3353
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.3302
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.2757
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.2721
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c5
+FAISS Score   : 0.5680
+Rerank Score  : 8.1745
+Page          : 1
+Relevant?     : True
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c4
+FAISS Score   : 0.3718
+Rerank Score  : -9.0705
+Page          : 1
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c3
+FAISS Score   : 0.3302
+Rerank Score  : -9.1608
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c6
+FAISS Score   : 0.3353
+Rerank Score  : -10.7858
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c5
+  2. Hemlata_Resume_Data.pdf::p1::c4
+  3. Hemlata_Resume_Data.pdf::p1::c3
+  4. Hemlata_Resume_Data.pdf::p1::c6
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 1.0000 (100.00%)
+Reciprocal Rank    : 1.0000
+
+
+================================================================================
+QUESTION 14
+================================================================================
+Question:
+Summarize Hemlata's professional experience.
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c2
+  ✓ Hemlata_Resume_Data.pdf::p1::c3
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.3257
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.2251
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.1642
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.1335
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.1222
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : -0.0007
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c1
+FAISS Score   : 0.3257
+Rerank Score  : -2.8041
+Page          : 1
+Relevant?     : False
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c2
+FAISS Score   : 0.1642
+Rerank Score  : -11.1686
+Page          : 1
+Relevant?     : True
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c4
+FAISS Score   : -0.0007
+Rerank Score  : -11.3315
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c6
+FAISS Score   : 0.2251
+Rerank Score  : -11.3740
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c1
+  2. Hemlata_Resume_Data.pdf::p1::c2
+  3. Hemlata_Resume_Data.pdf::p1::c4
+  4. Hemlata_Resume_Data.pdf::p1::c6
+
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 0.5000 (50.00%)
+Reciprocal Rank    : 0.5000
+
+
+================================================================================
+QUESTION 15
+================================================================================
+Question:
+Summarize Hemlata's major projects.
+
+Expected relevant chunks:
+  ✓ Hemlata_Resume_Data.pdf::p1::c4
+  ✓ Hemlata_Resume_Data.pdf::p1::c5
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.4188
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.2575
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.2305
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.1831
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.1306
+Page         : 1
+Relevant?    : True
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : 0.0272
+Page         : 1
+Relevant?    : True
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c1
+FAISS Score   : 0.4188
+Rerank Score  : -2.3261
+Page          : 1
+Relevant?     : False
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c3
+FAISS Score   : 0.1831
+Rerank Score  : -11.1714
+Page          : 1
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c6
+FAISS Score   : 0.2575
+Rerank Score  : -11.2094
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c2
+FAISS Score   : 0.2305
+Rerank Score  : -11.2396
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c1
+  2. Hemlata_Resume_Data.pdf::p1::c3
+  3. Hemlata_Resume_Data.pdf::p1::c6
+  4. Hemlata_Resume_Data.pdf::p1::c2
+
+Precision@4 : 0.0000 (0.00%)
+Recall@4    : 0.0000 (0.00%)
+Reciprocal Rank    : 0.0000
+
+
+================================================================================
+QUESTION 16
+================================================================================
+Question:
+What is Hemlata's experience with Kubernetes?
+
+Expected relevant chunks:
+  None (negative / no-answer query)
+
+--------------------------------------------------------------------------------
+STAGE 1: FAISS CANDIDATE RETRIEVAL
+--------------------------------------------------------------------------------
+FAISS returned 6 candidate chunks.
+
+FAISS Rank 1
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c1
+Similarity   : 0.3462
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 2
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c3
+Similarity   : 0.1701
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 3
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c6
+Similarity   : 0.1624
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 4
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c2
+Similarity   : 0.1450
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 5
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c5
+Similarity   : 0.0525
+Page         : 1
+Relevant?    : False
+
+FAISS Rank 6
+Chunk ID     : Hemlata_Resume_Data.pdf::p1::c4
+Similarity   : 0.0146
+Page         : 1
+Relevant?    : False
+
+--------------------------------------------------------------------------------
+STAGE 2: CROSS-ENCODER RERANKING
+--------------------------------------------------------------------------------
+CrossEncoder is scoring query-document pairs...
+
+Final 4 chunks after reranking:
+
+Rerank 1
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c1
+FAISS Score   : 0.3462
+Rerank Score  : -5.6681
+Page          : 1
+Relevant?     : False
+
+Rerank 2
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c2
+FAISS Score   : 0.1450
+Rerank Score  : -11.2804
+Page          : 1
+Relevant?     : False
+
+Rerank 3
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c4
+FAISS Score   : 0.0146
+Rerank Score  : -11.3920
+Page          : 1
+Relevant?     : False
+
+Rerank 4
+Chunk ID      : Hemlata_Resume_Data.pdf::p1::c6
+FAISS Score   : 0.1624
+Rerank Score  : -11.4344
+Page          : 1
+Relevant?     : False
+
+--------------------------------------------------------------------------------
+STAGE 3: METRICS
+--------------------------------------------------------------------------------
+Final Retrieved IDs:
+  1. Hemlata_Resume_Data.pdf::p1::c1
+  2. Hemlata_Resume_Data.pdf::p1::c2
+  3. Hemlata_Resume_Data.pdf::p1::c4
+  4. Hemlata_Resume_Data.pdf::p1::c6
+
+Precision@4 : 0.0000 (0.00%)
+Recall@4    : 0.0000 (0.00%)
+Reciprocal Rank    : 0.0000
+
+
+================================================================================
+FINAL RESULTS
+================================================================================
+Precision@4 : 0.2500 (25.00%)
+Recall@4    : 0.8438 (84.38%)
+MRR                : 0.7500 (75.00%)
+
+================================================================================
+EXPERIMENT 2 -> EXPERIMENT 3
+================================================================================
+Experiment 2: P@4=25.00% | R@4=84.38% | MRR=64.58%
+Experiment 3: P@4=25.00% | R@4=84.38% | MRR=75.00%
+Precision change: +0.00 percentage points
+Recall change   : -0.00 percentage points
+MRR change      : +10.42 percentage points
+
+================================================================================
+INTERPRETATION
+================================================================================
+→ Precision remained unchanged.
+⚠ Recall decreased: some relevant chunks may have been pushed out of Top-4.
+✓ MRR improved: relevant chunks moved higher in the ranking.
+
+================================================================================
+DONE
+================================================================================
